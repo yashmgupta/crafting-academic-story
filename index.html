@@ -3,10 +3,10 @@
 <html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#ffffff" name="theme-color"/><meta content="Assist. Prof. Yash Munnalal Gupta" name="author"/><meta content="yes" name="presenter-remote-ready"/><meta content="GitHub Pages and offline folder ready" name="deployment"/><meta content="Crafting Your Academic Story — an interactive workshop on Story, Screen, and Stage for research presentations." name="description"/><title>Crafting Your Academic Story</title><style>
 :root{
  --ink:#183033;--muted:#617579;--line:#c8d7da;--soft:#f7faf9;--lav:#e9e5ff;--blue:#d7eef8;--aqua:#cdefea;--mint:#dff3df;--coral:#ffd9c7;--gold:#ffeaba;--accent:#d87a51;--navy:#244a59;
- --titleScale:1.5;--bulletScale:1.5;--visualTextScale:1.35;--visualScale:1;--spaceScale:1.12;--fitTitle:1;--fitBullet:1;--fitVisualText:1;--fitVisual:1;--globalTextScale:1;
+ --titleScale:1.5;--bulletScale:1.5;--visualTextScale:1.35;--visualScale:1;--spaceScale:1.12;--globalTextScale:1;
 }
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fff;color:var(--ink);font-family:Garamond,Georgia,serif}.deck{position:relative;width:100vw;height:100vh}.slide{position:absolute;inset:0;display:none;padding:24px 44px 32px;background:#fff}.slide.active{display:grid;grid-template-rows:28px auto auto 1fr 24px;gap:calc(12px*var(--spaceScale));}.meta-row{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:17px;letter-spacing:.025em}.slide-title{margin:0;max-width:1320px;font-size:calc(46px*var(--titleScale)*var(--globalTextScale)*var(--fitTitle));line-height:1.04;font-weight:700;letter-spacing:-.018em}.key-points{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:calc(10px*var(--spaceScale)) calc(20px*var(--spaceScale));max-width:1460px;align-items:start}.key-points li{position:relative;padding-left:20px;font-size:calc(22px*var(--bulletScale)*var(--globalTextScale)*var(--fitBullet));line-height:1.25;color:var(--ink)}.key-points li::before{content:'';position:absolute;left:0;top:.66em;width:11px;height:2px;border-radius:999px;background:#91a8ad}
-.visual-shell{min-height:0;width:100%;height:100%;display:grid;place-items:center;background:var(--soft);border:1px solid rgba(24,48,51,.08);border-radius:30px;overflow:hidden;padding:calc(26px*var(--spaceScale));box-shadow:0 16px 55px rgba(24,48,51,.035)}.visual-content{width:100%;height:100%;min-height:0;display:grid;place-items:center;transform:scale(calc(var(--visualScale)*var(--fitVisual)));transform-origin:center;font-size:calc(1em*var(--visualTextScale)*var(--globalTextScale)*var(--fitVisualText))}.slide-foot{border-top:1px solid var(--line);padding-top:7px;font-size:14px;color:var(--muted)}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fff;color:var(--ink);font-family:Garamond,Georgia,serif}.deck{position:relative;width:100vw;height:100vh}.slide{position:absolute;inset:0;display:none;padding:24px 44px 32px;background:#fff}.slide.active{display:grid;grid-template-rows:28px auto auto 1fr 24px;gap:calc(12px*var(--spaceScale));}.meta-row{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:17px;letter-spacing:.025em}.slide-title{margin:0;max-width:1320px;font-size:calc(46px*var(--titleScale)*var(--globalTextScale));line-height:1.04;font-weight:700;letter-spacing:-.018em}.key-points{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:calc(10px*var(--spaceScale)) calc(20px*var(--spaceScale));max-width:1460px;align-items:start}.key-points li{position:relative;padding-left:20px;font-size:calc(22px*var(--bulletScale)*var(--globalTextScale));line-height:1.25;color:var(--ink)}.key-points li::before{content:'';position:absolute;left:0;top:.66em;width:11px;height:2px;border-radius:999px;background:#91a8ad}
+.visual-shell{min-height:0;width:100%;height:100%;display:grid;place-items:center;background:var(--soft);border:1px solid rgba(24,48,51,.08);border-radius:30px;overflow:hidden;padding:calc(26px*var(--spaceScale));box-shadow:0 16px 55px rgba(24,48,51,.035)}.visual-content{width:100%;height:100%;min-height:0;display:grid;place-items:center;transform:scale(var(--visualScale));transform-origin:center;font-size:calc(1em*var(--visualTextScale)*var(--globalTextScale))}.slide-foot{border-top:1px solid var(--line);padding-top:7px;font-size:14px;color:var(--muted)}
 .facilitator{position:absolute;left:44px;bottom:64px;z-index:15;width:min(680px,70vw);display:none;gap:10px;padding:16px 18px;background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:20px;box-shadow:0 16px 60px rgba(24,48,51,.14)}.showCoach .slide.active .facilitator{display:grid}.facilitator>div{display:grid;grid-template-columns:52px 1fr;gap:10px}.facilitator b{font-size:13px;color:var(--accent)}.facilitator span{font-size:17px;line-height:1.3;color:var(--muted)}
 /* common cards */
 .heroMark,.pillars,.cards3,.steps4,.certainty,.five,.eyePath,.timePath,.threeMoves,.closingMoves,.qa,.pass-grid,.predict,.decision,.lit{display:grid;gap:18px;width:100%}.heroMark{grid-template-columns:repeat(3,1fr);max-width:1000px}.heroMark span,.pillars>div,.cards3 article,.steps4>div,.certainty>div,.five span,.eyePath>div,.timePath>div,.threeMoves>div,.closingMoves span,.qa>div,.pass-card,.predict>div,.decision>div,.lit>div{border-radius:26px;padding:24px 20px;text-align:center;font-weight:700}.heroMark span{font-size:calc(31px*var(--visualTextScale)*var(--globalTextScale))}.heroMark span:nth-child(1),.five span:nth-child(1),.timePath div:nth-child(1),.qa div:nth-child(1){background:var(--lav)}.heroMark span:nth-child(2),.pillars>div:nth-child(1),.cards3 article:nth-child(1),.steps4>div:nth-child(1),.eyePath>div:nth-child(1),.timePath div:nth-child(2),.threeMoves>div:nth-child(1),.qa div:nth-child(2){background:var(--blue)}.heroMark span:nth-child(3),.pillars>div:nth-child(2),.cards3 article:nth-child(2),.steps4>div:nth-child(2),.certainty>div:nth-child(1),.timePath div:nth-child(3),.threeMoves>div:nth-child(2),.qa div:nth-child(3){background:var(--aqua)}.pillars,.cards3{grid-template-columns:repeat(3,1fr)}.pillars>div,.cards3 article{min-height:210px}.pillars b,.cards3 b{font-size:calc(30px*var(--visualTextScale)*var(--globalTextScale))}.pillars p,.cards3 p{font-size:calc(20px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}
@@ -183,7 +183,6 @@ body.presenting .remote-hint{display:none}
 
 
 /* Presenter Edition v2: large-text defaults with automatic safe fitting */
-.slide{--fitTitle:1;--fitBullet:1;--fitVisualText:1;--fitVisual:1}
 .slide-title,.key-points,.visual-shell{transition:font-size .18s ease, transform .18s ease}
 .menu-panel .range-wide-note{font-size:13px;color:var(--muted);line-height:1.25;margin:5px 0 8px}
 @media(max-height:760px){
@@ -367,7 +366,7 @@ body.presenting .remote-hint{display:none}
 
 
 /* FINAL PASS 3: all font-size controls affect every slide */
-:root{--boxText:calc(var(--visualTextScale)*var(--globalTextScale)*var(--fitVisualText));}
+:root{--boxText:calc(var(--visualTextScale)*var(--globalTextScale));}
 .slide[data-idx="3"] .loop-step b{font-size:clamp(calc(26px*var(--boxText)),calc(2.6vw*var(--boxText)),calc(44px*var(--boxText)))!important;line-height:1.02}
 .slide[data-idx="3"] .loop-step small{font-size:clamp(calc(14px*var(--boxText)),calc(1.1vw*var(--boxText)),calc(22px*var(--boxText)))!important;line-height:1.12}
 .slide[data-idx="3"] .loop-center b{font-size:clamp(calc(28px*var(--boxText)),calc(2.8vw*var(--boxText)),calc(46px*var(--boxText)))!important;line-height:.95}
@@ -400,6 +399,74 @@ body.presenting .remote-hint{display:none}
  .slide[data-idx="22"] .method-node span{line-height:1.02!important}
  .slide[data-idx="22"] .method-rule{grid-column:1/-1!important;align-self:end!important;margin-top:0!important}
 }
+
+
+/* UNIVERSAL FINAL: persistent global font settings. No per-slide hidden shrinking. */
+:root{--globalTextScale:1}
+.key-points li{color:var(--ink)!important;font-weight:650}
+.key-points li::before{background:var(--ink)!important;opacity:.78}
+.slide-title{font-size:clamp(34px,calc(46px*var(--titleScale)*var(--globalTextScale)),78px)!important}
+.key-points li{font-size:clamp(18px,calc(22px*var(--bulletScale)*var(--globalTextScale)),38px)!important;line-height:1.12}
+.visual-content{font-size:calc(1em*var(--visualTextScale)*var(--globalTextScale))!important;transform:scale(var(--visualScale))!important}
+.visual-content *{overflow-wrap:break-word;word-break:normal}
+.visual-shell{min-height:0;isolation:isolate}
+.slide.active{grid-template-rows:28px auto auto minmax(0,1fr) 24px}
+@media(min-width:951px){.key-points{grid-template-columns:repeat(auto-fit,minmax(clamp(220px,20vw,360px),1fr))}}
+
+/* Slide 04 learning loop: reflow grid layout */
+.slide[data-idx="3"] .learning-loop-premium{position:relative;width:min(1180px,100%);height:100%;min-height:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto minmax(0,1fr);gap:clamp(12px,1.4vw,22px);align-items:stretch}
+.slide[data-idx="3"] .loop-center{position:static;transform:none;width:auto;height:auto;min-height:clamp(72px,13vh,125px);grid-column:1/-1;border-radius:28px;padding:clamp(10px,1.3vw,20px)}
+.slide[data-idx="3"] .loop-step{position:static;width:auto;min-height:clamp(100px,21vh,178px);height:auto;padding:clamp(12px,1.45vw,22px);display:grid;align-content:center}
+.slide[data-idx="3"] .loop-step b{font-size:clamp(26px,2.5vw,43px)!important;line-height:1}
+.slide[data-idx="3"] .loop-step small{font-size:clamp(16px,1.25vw,23px)!important;line-height:1.12}
+.slide[data-idx="3"] .loop-center b{font-size:clamp(30px,2.8vw,48px)!important}
+.slide[data-idx="3"] .loop-center small{font-size:clamp(14px,1.05vw,20px)!important}
+
+/* Slide 23 method flowchart: reflow grid layout */
+.slide[data-idx="22"] .method-flow-premium{position:relative;width:min(1220px,100%);height:100%;min-height:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:minmax(0,1fr) auto;gap:clamp(10px,1.2vw,18px);align-items:center}
+.slide[data-idx="22"] .method-flow-svg{display:none!important}
+.slide[data-idx="22"] .method-node{position:static!important;width:auto!important;min-height:clamp(100px,20vh,170px);height:auto;padding:clamp(11px,1.25vw,19px);display:grid;align-content:center}
+.slide[data-idx="22"] .method-node b{font-size:clamp(22px,1.95vw,36px)!important;line-height:1.02}
+.slide[data-idx="22"] .method-node span{font-size:clamp(15px,1.05vw,21px)!important;line-height:1.1}
+.slide[data-idx="22"] .method-rule{position:static!important;transform:none!important;grid-column:1/-1;justify-self:center;width:min(920px,92%);white-space:normal;font-size:clamp(16px,1.4vw,26px)!important;padding:clamp(10px,1.2vw,17px) clamp(16px,1.8vw,28px)}
+
+/* Slide 41 number examples */
+.number-examples{width:min(1220px,100%);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,24px)}
+.number-card{min-height:clamp(190px,30vh,310px);border-radius:28px;padding:clamp(16px,1.8vw,28px);background:#fff;border:1px solid var(--line);box-shadow:0 14px 42px rgba(24,48,51,.05);display:grid;align-content:center;gap:10px}
+.number-card:nth-child(1){background:var(--blue)}.number-card:nth-child(2){background:var(--mint)}.number-card:nth-child(3){background:var(--coral)}
+.number-card small{text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;font-size:clamp(12px,0.9vw,16px)!important}
+.number-card h2{margin:0;font-size:clamp(40px,4.3vw,76px)!important;line-height:.9;letter-spacing:-.035em}
+.number-card p{margin:0;font-size:clamp(19px,1.7vw,31px)!important;line-height:1.12;color:var(--ink);font-weight:700}
+.number-card em{font-style:normal;color:var(--muted);font-size:clamp(15px,1.15vw,22px)!important;line-height:1.16}
+
+@media(max-width:1200px) and (min-width:951px){
+ .slide[data-idx="22"] .method-flow-premium{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto auto}
+ .slide[data-idx="22"] .method-rule{grid-column:1/-1}
+}
+@media(max-width:1050px){
+ .slide[data-idx="3"] .learning-loop-premium{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto auto}
+ .slide[data-idx="3"] .loop-step{min-height:105px}
+ .number-examples{grid-template-columns:1fr}
+ .number-card{min-height:120px}
+}
+@media(max-height:760px) and (min-width:951px){
+ .slide.active{gap:calc(7px*var(--spaceScale))}
+ .key-points{gap:6px 14px}
+ .key-points li{line-height:1.05!important}
+ .slide[data-idx="3"] .loop-center{min-height:58px;padding:8px 14px;border-radius:20px}
+ .slide[data-idx="3"] .loop-step{min-height:85px;padding:9px 11px;border-radius:20px}
+ .slide[data-idx="3"] .loop-step b{font-size:clamp(22px,2vw,32px)!important}
+ .slide[data-idx="3"] .loop-step small{font-size:clamp(13px,1vw,18px)!important}
+ .slide[data-idx="22"] .method-node{min-height:82px;padding:9px 10px;border-radius:18px}
+ .slide[data-idx="22"] .method-node b{font-size:clamp(18px,1.55vw,27px)!important}
+ .slide[data-idx="22"] .method-node span{font-size:clamp(12px,.9vw,16px)!important}
+ .slide[data-idx="22"] .method-rule{font-size:clamp(13px,1.05vw,19px)!important;padding:8px 12px}
+ .number-card{min-height:145px;padding:13px 15px;border-radius:22px}
+ .number-card h2{font-size:clamp(32px,3.5vw,58px)!important}
+ .number-card p{font-size:clamp(16px,1.35vw,24px)!important}
+ .number-card em{font-size:clamp(12px,1vw,16px)!important}
+}
+.slide[data-idx="16"] .visual-content,.slide[data-idx="20"] .visual-content,.slide[data-idx="23"] .visual-content,.slide[data-idx="32"] .visual-content,.slide[data-idx="33"] .visual-content,.slide[data-idx="41"] .visual-content{overflow:hidden}
 
 </style></head><body><div class="deck"><section class="slide immersive" data-idx="0" data-layout="heroKinetic">
 <div class="meta-row"><div class="tag">Opening</div><div class="num">01 / 48</div></div>
@@ -907,13 +974,13 @@ body.presenting .remote-hint{display:none}
 </div>
 </div></div>
 <div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
-</section></div><div class="menu"><button aria-label="Open presentation menu" class="menu-btn" title="Presentation menu (M)">☰</button><div class="menu-panel"><button id="prev">← Previous</button><button id="next">Next →</button><button id="replay">Replay animation</button><button id="coach">Coach notes</button><button id="full">Fullscreen</button><button id="start">Start</button><div class="menu-section"><div class="range-wide-note">Large-text mode is ON. Use <b>All text size</b> for every slide. The deck auto-fits active slides to reduce overlap.</div>
-<label>All text size</label><input class="style-range" id="allTextSize" type="range" min="85" max="170" value="100">
-<label>Title size</label><input class="style-range" id="titleSize" type="range" min="90" max="220" value="150">
-<label>Bullet size</label><input class="style-range" id="bulletSize" type="range" min="90" max="230" value="150">
-<label>Diagram text</label><input class="style-range" id="visualTextSize" type="range" min="90" max="230" value="135">
-<label>Diagram size</label><input class="style-range" id="visualSize" type="range" min="70" max="135" value="100">
-<label>Spacing</label><input class="style-range" id="spacing" type="range" min="70" max="165" value="112">
+</section></div><div class="menu"><button aria-label="Open presentation menu" class="menu-btn" title="Presentation menu (M)">☰</button><div class="menu-panel"><button id="prev">← Previous</button><button id="next">Next →</button><button id="replay">Replay animation</button><button id="coach">Coach notes</button><button id="full">Fullscreen</button><button id="start">Start</button><div class="menu-section"><div class="range-wide-note">Universal font control is ON. Sizes stay the same on every slide; layouts reflow instead of secretly shrinking text.</div>
+<label>All text size</label><input class="style-range" id="allTextSize" type="range" min="85" max="145" value="100">
+<label>Title size</label><input class="style-range" id="titleSize" type="range" min="90" max="175" value="150">
+<label>Bullet size</label><input class="style-range" id="bulletSize" type="range" min="90" max="175" value="150">
+<label>Diagram text</label><input class="style-range" id="visualTextSize" type="range" min="90" max="175" value="135">
+<label>Diagram size</label><input class="style-range" id="visualSize" type="range" min="70" max="130" value="100">
+<label>Spacing</label><input class="style-range" id="spacing" type="range" min="75" max="150" value="112">
 <button id="resetStyle">Reset sizes</button></div><div class="menu-section"><button data-jump="0">01 · Crafting Your Academic Story</button><button data-jump="1">02 · What survives after ten seconds?</button><button data-jump="2">03 · Story · Screen · Stage</button><button data-jump="3">04 · Predict. See. Try. Retrieve.</button><button data-jump="4">05 · Before slides: name the kind of talk</button><button data-jump="5">06 · Section names are not the story</button><button data-jump="6">07 · The memory map stays simple</button><button data-jump="7">08 · Introduction is a narrowing funnel</button><button data-jump="8">09 · WHY has four moves</button><button data-jump="9">10 · HOW: one design sentence plus three anchors</button><button data-jump="10">11 · WHAT, SO WHAT, NOW WHAT need different certainty</button><button data-jump="11">12 · One study, three academic routes</button><button data-jump="12">13 · Proposal route: make the plan believable</button><button data-jump="13">14 · Defence route: make the decisions defensible</button><button data-jump="14">15 · Conference route: make one result travel</button><button data-jump="15">16 · Build the opening in three passes</button><button data-jump="16">17 · Activity: build the research route</button><button data-jump="17">18 · Activity: write your 60-second research story</button><button data-jump="18">19 · Close your notes: rebuild the route</button><button data-jump="19">20 · Slides direct attention</button><button data-jump="20">21 · Concept first, formatting second</button><button data-jump="21">22 · Choose the visual by the job it must do</button><button data-jump="22">23 · Methods often need a flowchart</button><button data-jump="23">24 · Example slide: method as a flowchart</button><button data-jump="24">25 · Literature review needs a map, not a wall of citations</button><button data-jump="25">26 · Example slide: literature review as a timeline</button><button data-jump="26">27 · Exact value or pattern?</button><button data-jump="27">28 · Example slide: exact values need a table</button><button data-jump="28">29 · Example slide: patterns need a chart</button><button data-jump="29">30 · Evidence slides need claim titles</button><button data-jump="30">31 · Example slide: weak vs strong result slide</button><button data-jump="31">32 · Visual hierarchy is kindness</button><button data-jump="32">33 · Animate logic, not decoration</button><button data-jump="33">34 · Activity: choose the right visual form</button><button data-jump="34">35 · Activity: assemble a one-claim slide</button><button data-jump="35">36 · Close the examples: rebuild the design rule</button><button data-jump="36">37 · Stage guides attention through time</button><button data-jump="37">38 · Calm is observable</button><button data-jump="38">39 · Road signs make logic audible</button><button data-jump="39">40 · Explain every chart in three moves</button><button data-jump="40">41 · Say the pattern before the digits</button><button data-jump="41">42 · A five-beat figure routine</button><button data-jump="42">43 · Close with one moral</button><button data-jump="43">44 · Q&amp;A: answer first, then support</button><button data-jump="44">45 · When you do not know, stay credible</button><button data-jump="45">46 · Activity: committee hot seat</button><button data-jump="46">47 · Final transfer: revise one real presentation</button><button data-jump="47">48 · Thank you</button></div></div></div><div class="remote-hint" aria-live="polite">Presenter ready</div><div class="progress"><span></span></div><script>
 const slides=[...document.querySelectorAll('.slide')];let idx=0;let activeTL=null;let gsapReady=false;
 const progress=document.querySelector('.progress span');
@@ -957,61 +1024,31 @@ function animateSlide(slide){
  if(slide.dataset.layout==='qaFlow'){const qs=slide.querySelectorAll('.qa-step');qs.forEach((n,i)=>tl.to(n,{scale:1.055,duration:.15,ease:'power2.out'},i?'<+.28':'-=1.25').to(n,{scale:1,duration:.2},'<+.10'));}
 }
 
-function resetFit(slide){
-  if(!slide) return;
-  slide.style.setProperty('--fitTitle',1);
-  slide.style.setProperty('--fitBullet',1);
-  slide.style.setProperty('--fitVisualText',1);
-  slide.style.setProperty('--fitVisual',1);
+
+const DEFAULT_SIZES={allTextSize:100,titleSize:150,bulletSize:150,visualTextSize:135,visualSize:100,spacing:112};
+const SIZE_VARS={allTextSize:'--globalTextScale',titleSize:'--titleScale',bulletSize:'--bulletScale',visualTextSize:'--visualTextScale',visualSize:'--visualScale',spacing:'--spaceScale'};
+function applySizeControl(id, value, save=true){
+ const el=document.querySelector('#'+id);
+ if(!el || !SIZE_VARS[id]) return;
+ const min=Number(el.min||0), max=Number(el.max||999);
+ const safe=Math.max(min,Math.min(max,Number(value)||DEFAULT_SIZES[id]));
+ el.value=String(safe);
+ setVar(SIZE_VARS[id], safe/100);
+ if(save){try{localStorage.setItem('academicStory_'+id,String(safe));}catch(e){}}
 }
-function hasOverflow(el){
-  if(!el) return false;
-  return el.scrollHeight > el.clientHeight + 2 || el.scrollWidth > el.clientWidth + 2;
+function applyAllSavedSizes(){
+ Object.keys(DEFAULT_SIZES).forEach(id=>{
+   let value=DEFAULT_SIZES[id];
+   try{value=Number(localStorage.getItem('academicStory_'+id))||DEFAULT_SIZES[id];}catch(e){}
+   applySizeControl(id,value,false);
+ });
 }
-function safeFitActiveSlide(){
-  const slide = slides[idx];
-  if(!slide) return;
-  resetFit(slide);
-  const title = slide.querySelector('.slide-title');
-  const points = slide.querySelector('.key-points');
-  const shell = slide.querySelector('.visual-shell');
-  const vcontent = slide.querySelector('.visual-content');
+function refreshUniversalLayout(){requestAnimationFrame(()=>animateSlide(slides[idx]));}
+window.refreshUniversalLayout=refreshUniversalLayout;
+window.addEventListener('resize',()=>requestAnimationFrame(()=>animateSlide(slides[idx])));
+applyAllSavedSizes();
 
-  // Let browser settle first.
-  const minTitle=.62, minBullet=.62, minVisualText=.62, minVisual=.76;
-  let t=1,b=1,vt=1,v=1;
-
-  // Fit title and bullets first.
-  for(let i=0;i<12;i++){
-    if(hasOverflow(slide) || hasOverflow(title)){
-      t=Math.max(minTitle,t-.045);
-      slide.style.setProperty('--fitTitle',t);
-    }
-    if(hasOverflow(slide) || hasOverflow(points)){
-      b=Math.max(minBullet,b-.045);
-      slide.style.setProperty('--fitBullet',b);
-    }
-    if(!(hasOverflow(slide)||hasOverflow(title)||hasOverflow(points))) break;
-  }
-
-  // Fit visual text before shrinking entire visual.
-  for(let i=0;i<18;i++){
-    if(hasOverflow(slide) || hasOverflow(shell) || hasOverflow(vcontent)){
-      vt=Math.max(minVisualText,vt-.04);
-      slide.style.setProperty('--fitVisualText',vt);
-    } else break;
-  }
-  for(let i=0;i<14;i++){
-    if(hasOverflow(slide) || hasOverflow(shell) || hasOverflow(vcontent)){
-      v=Math.max(minVisual,v-.025);
-      slide.style.setProperty('--fitVisual',v);
-    } else break;
-  }
-}
-window.safeFitActiveSlide=safeFitActiveSlide;
-window.addEventListener('resize',()=>requestAnimationFrame(safeFitActiveSlide));
-
-function show(n){idx=Math.max(0,Math.min(slides.length-1,n));window.__slideIndex=idx;slides.forEach((s,i)=>s.classList.toggle('active',i===idx));progress.style.width=((idx+1)/slides.length*100)+'%';requestAnimationFrame(()=>{safeFitActiveSlide();animateSlide(slides[idx]);setTimeout(safeFitActiveSlide,260)});document.querySelector('.menu-panel')?.classList.remove('open')}
+function show(n){idx=Math.max(0,Math.min(slides.length-1,n));window.__slideIndex=idx;slides.forEach((s,i)=>s.classList.toggle('active',i===idx));progress.style.width=((idx+1)/slides.length*100)+'%';requestAnimationFrame(()=>animateSlide(slides[idx]));document.querySelector('.menu-panel')?.classList.remove('open')}
 window.show=show;
 function next(){show(idx+1)}function prev(){show(idx-1)}
 function isTypingTarget(target){
@@ -1043,8 +1080,8 @@ document.addEventListener('keydown',e=>{
  else if(k==='m'){e.preventDefault();document.querySelector('.menu-panel')?.classList.toggle('open');}
  else if(key==='Escape'){document.querySelector('.menu-panel')?.classList.remove('open');document.body.classList.remove('presenting');}
 });
-const mb=document.querySelector('.menu-btn'),mp=document.querySelector('.menu-panel');mb.onclick=()=>mp.classList.toggle('open');document.querySelector('#prev').onclick=prev;document.querySelector('#next').onclick=next;document.querySelector('#start').onclick=()=>show(0);document.querySelector('#replay').onclick=()=>animateSlide(slides[idx]);document.querySelector('#coach').onclick=()=>document.body.classList.toggle('showCoach');document.querySelector('#full').onclick=()=>document.documentElement.requestFullscreen?.();document.querySelector('#resetStyle').onclick=()=>{setVar('--globalTextScale',1);setVar('--titleScale',1.5);setVar('--bulletScale',1.5);setVar('--visualTextScale',1.35);setVar('--visualScale',1);setVar('--spaceScale',1.12);document.querySelector('#allTextSize').value=100;document.querySelector('#titleSize').value=150;document.querySelector('#bulletSize').value=150;document.querySelector('#visualTextSize').value=135;document.querySelector('#visualSize').value=100;document.querySelector('#spacing').value=112;requestAnimationFrame(()=>safeFitActiveSlide())};
-[['allTextSize','--globalTextScale'],['titleSize','--titleScale'],['bulletSize','--bulletScale'],['visualTextSize','--visualTextScale'],['visualSize','--visualScale'],['spacing','--spaceScale']].forEach(([id,v])=>{const el=document.querySelector('#'+id);if(el)el.oninput=()=>{setVar(v,el.value/100);requestAnimationFrame(()=>safeFitActiveSlide())}});document.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>show(+b.dataset.jump));
+const mb=document.querySelector('.menu-btn'),mp=document.querySelector('.menu-panel');mb.onclick=()=>mp.classList.toggle('open');document.querySelector('#prev').onclick=prev;document.querySelector('#next').onclick=next;document.querySelector('#start').onclick=()=>show(0);document.querySelector('#replay').onclick=()=>animateSlide(slides[idx]);document.querySelector('#coach').onclick=()=>document.body.classList.toggle('showCoach');document.querySelector('#full').onclick=()=>document.documentElement.requestFullscreen?.();document.querySelector('#resetStyle').onclick=()=>{Object.entries(DEFAULT_SIZES).forEach(([id,val])=>applySizeControl(id,val,true));showRemoteHint('Universal sizes reset');refreshUniversalLayout();};
+Object.keys(DEFAULT_SIZES).forEach(id=>{const el=document.querySelector('#'+id);if(el)el.oninput=()=>{applySizeControl(id,el.value,true);showRemoteHint('Size applied to all slides');refreshUniversalLayout();}});document.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>show(+b.dataset.jump));
 document.querySelectorAll('[data-route-jump]').forEach(b=>b.onclick=()=>{const target=b.dataset.routeJump;const s=slides.find(x=>x.dataset.layout===target+'Route');if(s)show(+s.dataset.idx)});
 let dragged=null;
 function setFeedback(scope,msg,kind=''){
