@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+
+<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#ffffff" name="theme-color"/><meta content="Assist. Prof. Yash Munnalal Gupta" name="author"/><meta content="yes" name="presenter-remote-ready"/><meta content="GitHub Pages and offline folder ready" name="deployment"/><meta content="Crafting Your Academic Story — an interactive workshop on Story, Screen, and Stage for research presentations." name="description"/><title>Crafting Your Academic Story</title><style>
+:root{
+ --ink:#183033;--muted:#617579;--line:#c8d7da;--soft:#f7faf9;--lav:#e9e5ff;--blue:#d7eef8;--aqua:#cdefea;--mint:#dff3df;--coral:#ffd9c7;--gold:#ffeaba;--accent:#d87a51;--navy:#244a59;
+ --titleScale:1.5;--bulletScale:1.5;--visualTextScale:1.35;--visualScale:1;--spaceScale:1.12;--fitTitle:1;--fitBullet:1;--fitVisualText:1;--fitVisual:1;--globalTextScale:1;
+}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fff;color:var(--ink);font-family:Garamond,Georgia,serif}.deck{position:relative;width:100vw;height:100vh}.slide{position:absolute;inset:0;display:none;padding:24px 44px 32px;background:#fff}.slide.active{display:grid;grid-template-rows:28px auto auto 1fr 24px;gap:calc(12px*var(--spaceScale));}.meta-row{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:17px;letter-spacing:.025em}.slide-title{margin:0;max-width:1320px;font-size:calc(46px*var(--titleScale)*var(--globalTextScale)*var(--fitTitle));line-height:1.04;font-weight:700;letter-spacing:-.018em}.key-points{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:calc(10px*var(--spaceScale)) calc(20px*var(--spaceScale));max-width:1460px;align-items:start}.key-points li{position:relative;padding-left:20px;font-size:calc(22px*var(--bulletScale)*var(--globalTextScale)*var(--fitBullet));line-height:1.25;color:var(--ink)}.key-points li::before{content:'';position:absolute;left:0;top:.66em;width:11px;height:2px;border-radius:999px;background:#91a8ad}
+.visual-shell{min-height:0;width:100%;height:100%;display:grid;place-items:center;background:var(--soft);border:1px solid rgba(24,48,51,.08);border-radius:30px;overflow:hidden;padding:calc(26px*var(--spaceScale));box-shadow:0 16px 55px rgba(24,48,51,.035)}.visual-content{width:100%;height:100%;min-height:0;display:grid;place-items:center;transform:scale(calc(var(--visualScale)*var(--fitVisual)));transform-origin:center;font-size:calc(1em*var(--visualTextScale)*var(--globalTextScale)*var(--fitVisualText))}.slide-foot{border-top:1px solid var(--line);padding-top:7px;font-size:14px;color:var(--muted)}
+.facilitator{position:absolute;left:44px;bottom:64px;z-index:15;width:min(680px,70vw);display:none;gap:10px;padding:16px 18px;background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:20px;box-shadow:0 16px 60px rgba(24,48,51,.14)}.showCoach .slide.active .facilitator{display:grid}.facilitator>div{display:grid;grid-template-columns:52px 1fr;gap:10px}.facilitator b{font-size:13px;color:var(--accent)}.facilitator span{font-size:17px;line-height:1.3;color:var(--muted)}
+/* common cards */
+.heroMark,.pillars,.cards3,.steps4,.certainty,.five,.eyePath,.timePath,.threeMoves,.closingMoves,.qa,.pass-grid,.predict,.decision,.lit{display:grid;gap:18px;width:100%}.heroMark{grid-template-columns:repeat(3,1fr);max-width:1000px}.heroMark span,.pillars>div,.cards3 article,.steps4>div,.certainty>div,.five span,.eyePath>div,.timePath>div,.threeMoves>div,.closingMoves span,.qa>div,.pass-card,.predict>div,.decision>div,.lit>div{border-radius:26px;padding:24px 20px;text-align:center;font-weight:700}.heroMark span{font-size:calc(31px*var(--visualTextScale)*var(--globalTextScale))}.heroMark span:nth-child(1),.five span:nth-child(1),.timePath div:nth-child(1),.qa div:nth-child(1){background:var(--lav)}.heroMark span:nth-child(2),.pillars>div:nth-child(1),.cards3 article:nth-child(1),.steps4>div:nth-child(1),.eyePath>div:nth-child(1),.timePath div:nth-child(2),.threeMoves>div:nth-child(1),.qa div:nth-child(2){background:var(--blue)}.heroMark span:nth-child(3),.pillars>div:nth-child(2),.cards3 article:nth-child(2),.steps4>div:nth-child(2),.certainty>div:nth-child(1),.timePath div:nth-child(3),.threeMoves>div:nth-child(2),.qa div:nth-child(3){background:var(--aqua)}.pillars,.cards3{grid-template-columns:repeat(3,1fr)}.pillars>div,.cards3 article{min-height:210px}.pillars b,.cards3 b{font-size:calc(30px*var(--visualTextScale)*var(--globalTextScale))}.pillars p,.cards3 p{font-size:calc(20px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}
+.model{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:64px;width:min(1050px,95%);align-items:center}.model b{position:relative;z-index:2;padding:27px 20px;border-radius:22px;background:var(--lav);text-align:center;font-size:calc(25px*var(--visualTextScale)*var(--globalTextScale))}.model b:nth-of-type(2){background:var(--blue)}.model b:nth-of-type(3){background:var(--aqua)}.model b:nth-of-type(4){background:var(--mint)}.model span{height:3px;background:var(--line);transform-origin:left;position:relative}.model span::after{content:'';position:absolute;right:-5px;top:-4px;width:10px;height:10px;background:var(--accent);border-radius:50%}
+.memoryTest{display:grid;grid-template-columns:1fr 1fr;gap:24px;width:100%;max-width:1200px}.memoryTest>div{background:#fff;border:1px solid #d9e5e7;border-radius:26px;padding:26px;min-height:285px}.memoryTest small,.two-compare small{display:block;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-size:14px;margin-bottom:14px}.memoryTest p{font-size:calc(20px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted);line-height:1.35}.memoryTest b{font-size:calc(30px*var(--visualTextScale)*var(--globalTextScale));line-height:1.08}.miniBars,.smallBars,.hbars{display:grid;gap:14px;margin-top:24px}.miniBars span,.smallBars span,.hbars span{display:flex;justify-content:flex-end;align-items:center;background:var(--accent);height:40px;border-radius:999px;color:#fff;padding-right:14px;font-weight:700}
+.sectionmap{display:grid;grid-template-columns:repeat(5,1fr);gap:15px;width:100%}.sectionmap>div{border-radius:24px;padding:26px 12px;text-align:center;font-size:calc(21px*var(--visualTextScale)*var(--globalTextScale));background:var(--blue)}.sectionmap>div:nth-child(2){background:var(--aqua)}.sectionmap>div:nth-child(3){background:var(--mint)}.sectionmap>div:nth-child(4){background:var(--gold)}.sectionmap>div:nth-child(5){background:var(--coral)}.five{grid-template-columns:repeat(5,1fr)}.five span{font-size:calc(24px*var(--visualTextScale)*var(--globalTextScale))}.five span:nth-child(2){background:var(--blue)}.five span:nth-child(3){background:var(--aqua)}.five span:nth-child(4){background:var(--mint)}.five span:nth-child(5){background:var(--coral)}
+.funnel{display:grid;gap:12px;justify-items:center;width:100%}.funnel>div{padding:14px 12px;border-radius:22px;text-align:center;font-size:calc(24px*var(--visualTextScale)*var(--globalTextScale));font-weight:700}.funnel>div:nth-child(1){width:90%;background:var(--lav)}.funnel>div:nth-child(2){width:78%;background:var(--blue)}.funnel>div:nth-child(3){width:66%;background:var(--aqua)}.funnel>div:nth-child(4){width:54%;background:var(--mint)}.funnel>div:nth-child(5){width:42%;background:var(--coral)}.steps4{grid-template-columns:repeat(4,1fr)}.steps4>div{background:var(--blue);min-height:185px}.steps4>div:nth-child(2){background:var(--aqua)}.steps4>div:nth-child(3){background:var(--mint)}.steps4>div:nth-child(4){background:var(--coral)}.steps4 b{font-size:calc(25px*var(--visualTextScale)*var(--globalTextScale))}.steps4 p{font-size:calc(18px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}
+.anchorGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;width:100%;max-width:1100px}.anchorGrid h2{grid-column:1/-1;text-align:center;font-size:calc(27px*var(--visualTextScale)*var(--globalTextScale));line-height:1.14;margin:0 0 14px}.anchorGrid>div{padding:28px;border-radius:24px;background:var(--blue);text-align:center;font-size:calc(22px*var(--visualTextScale)*var(--globalTextScale));font-weight:700}.anchorGrid>div:nth-child(3){background:var(--aqua)}.anchorGrid>div:nth-child(4){background:var(--mint)}.certainty{grid-template-columns:repeat(3,1fr)}.certainty>div{background:var(--aqua);min-height:190px}.certainty>div:nth-child(2){background:var(--mint)}.certainty>div:nth-child(3){background:var(--gold)}.certainty p{font-size:calc(18px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}
+/* route overview */
+.route-overview{position:relative;width:min(1200px,98%);height:390px}.route-seed{position:absolute;z-index:3;top:10px;left:50%;transform:translateX(-50%);padding:17px 34px;border-radius:999px;background:var(--lav);font-size:calc(23px*var(--visualTextScale)*var(--globalTextScale));font-weight:700}.route-overview-svg{position:absolute;inset:0;width:100%;height:100%}.draw-path{fill:none;stroke:#91b8b2;stroke-width:3;stroke-linecap:round}.route-overview-cards{position:absolute;left:0;right:0;bottom:8px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.route-choice{border:0;border-radius:28px;padding:26px 20px;background:var(--blue);font-family:inherit;color:var(--ink);cursor:pointer;box-shadow:0 8px 30px rgba(24,48,51,.06)}.route-choice:nth-child(2){background:var(--mint)}.route-choice:nth-child(3){background:var(--coral)}.route-choice b{display:block;font-size:calc(29px*var(--visualTextScale)*var(--globalTextScale));margin-bottom:7px}.route-choice span{font-size:calc(19px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}
+.route-stage{position:relative;width:min(1220px,98%);height:330px}.route-svg,.routine-svg,.rail-svg,.tree-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.route-nodes{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);display:grid;gap:18px}.five-nodes{grid-template-columns:repeat(5,1fr)}.route-node,.rail-node{position:relative;z-index:3;border-radius:22px;padding:22px 14px;background:var(--blue);text-align:center;font-size:calc(20px*var(--visualTextScale)*var(--globalTextScale));font-weight:700;box-shadow:0 8px 24px rgba(24,48,51,.05)}.route-node:nth-child(2){background:var(--aqua)}.route-node:nth-child(3){background:var(--mint)}.route-node:nth-child(4){background:var(--gold)}.accent-node{background:var(--coral)!important}.moving-dot{position:absolute;z-index:6;width:15px;height:15px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 8px rgba(216,122,81,.16);left:0;top:0;pointer-events:none}.conference-funnel{position:relative;width:min(1040px,94%);height:360px;display:grid;gap:12px;justify-items:center;align-content:center}.funnel-band{padding:18px;border-radius:22px;text-align:center;font-size:calc(24px*var(--visualTextScale)*var(--globalTextScale));font-weight:700;background:var(--blue)}.funnel-band.wide{width:90%}.funnel-band.mid{width:70%;background:var(--aqua)}.funnel-band.narrow{width:50%;background:var(--mint)}.funnel-band.meaning{width:36%;background:var(--coral)}.pulse-ring{position:absolute;bottom:19px;left:50%;width:48px;height:48px;border:2px solid var(--accent);border-radius:50%;transform:translateX(-50%);opacity:.6}
+.pass-grid{grid-template-columns:repeat(3,1fr);max-width:1100px}.pass-card{background:#fff;border:1px solid var(--line);min-height:225px;text-align:left;display:grid;align-content:start;gap:10px}.pass-card:nth-child(2){background:var(--blue)}.pass-card:nth-child(3){background:var(--mint)}.pass-no{font-size:13px;letter-spacing:.12em;color:var(--accent)}.pass-card b{font-size:calc(28px*var(--visualTextScale)*var(--globalTextScale))}.pass-card p{font-size:calc(19px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted);line-height:1.3}
+/* interactive */
+.dragGame{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;width:100%;align-items:start}.toolbox,.canvasDrop{background:#fff;border:1px dashed #bdd0d3;border-radius:24px;padding:16px;min-height:200px}.toolbox button,.canvasDrop button{display:block;width:100%;margin:7px 0;padding:12px;border:0;background:var(--lav);border-radius:15px;font:700 calc(18px*var(--visualTextScale)*var(--globalTextScale)) Garamond,serif;cursor:grab}.zones{display:grid;gap:9px}.zone{border:1px solid #d3e0e3;background:#fff;border-radius:18px;padding:9px;min-height:82px}.zone h4{margin:0 0 6px;font-size:calc(18px*var(--visualTextScale)*var(--globalTextScale))}.zone [data-dropzone]{min-height:44px}.zone.over{outline:3px solid var(--accent)}.worksheet{display:grid;gap:10px;width:100%}.worksheet label{display:grid;grid-template-columns:85px 1fr;align-items:center;gap:12px;font-size:calc(20px*var(--visualTextScale)*var(--globalTextScale));font-weight:700}.worksheet input{border:1px solid #c7d6d9;border-radius:14px;padding:12px 14px;font:inherit}.retrieval{display:grid;gap:12px;width:min(900px,100%);text-align:center}.retrieval b{font-size:calc(30px*var(--visualTextScale)*var(--globalTextScale))}.retrieval span{background:var(--blue);border-radius:20px;padding:15px;font-size:calc(21px*var(--visualTextScale)*var(--globalTextScale));font-weight:700}
+.eyePath{grid-template-columns:repeat(3,1fr)}.eyePath>div{font-size:calc(28px*var(--visualTextScale)*var(--globalTextScale))}.decision{grid-template-columns:repeat(3,1fr)}.decision>div{background:var(--blue);min-height:125px}.decision>div:nth-child(2),.decision>div:nth-child(5){background:var(--aqua)}.decision>div:nth-child(3),.decision>div:nth-child(6){background:var(--mint)}.decision b{display:block;font-size:calc(21px*var(--visualTextScale)*var(--globalTextScale));margin-bottom:7px}.decision span{font-size:calc(18px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}
+.motion-rail{position:relative;width:min(1200px,98%);height:220px}.rail-nodes{position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;align-items:center}.rail-node{padding:20px 12px}.rail-node:nth-child(2){background:var(--aqua)}.rail-node:nth-child(3){background:var(--mint)}.rail-node:nth-child(4){background:var(--gold)}
+.study-tree{position:relative;width:min(1200px,98%);height:440px}.tree-node{position:absolute;z-index:3;padding:16px 24px;border-radius:20px;background:var(--blue);font-size:calc(20px*var(--visualTextScale)*var(--globalTextScale));font-weight:700;text-align:center;min-width:190px}.tree-node span{display:block;font-size:.75em;color:var(--muted)}.tree-node.root{top:16px;left:50%;transform:translateX(-50%);background:var(--lav)}.tree-node.branch.left{top:150px;left:18%}.tree-node.branch.right{top:150px;right:18%;background:var(--aqua)}.tree-node.measure.left{top:270px;left:18%;background:#eef8fd}.tree-node.measure.right{top:270px;right:18%;background:#eef8fd}.tree-node.outcome.left{top:376px;left:18%;background:var(--mint)}.tree-node.outcome.right{top:376px;right:18%;background:var(--mint)}
+.lit{grid-template-columns:repeat(3,1fr)}.lit>div{min-height:200px;display:grid;place-items:center;background:var(--lav);font-size:calc(26px*var(--visualTextScale)*var(--globalTextScale))}.lit>div:nth-child(2){background:var(--aqua)}.lit>div:nth-child(3){background:var(--mint)}.timelineEx{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;width:100%}.timelineEx>div{background:var(--blue);border-radius:22px;padding:18px;min-height:190px}.timelineEx>div:nth-child(2){background:var(--aqua)}.timelineEx>div:nth-child(3){background:var(--mint)}.timelineEx .gap{background:var(--coral)}.timelineEx b{font-size:calc(26px*var(--visualTextScale)*var(--globalTextScale))}.timelineEx p{font-size:calc(18px*var(--visualTextScale)*var(--globalTextScale))}.predict{grid-template-columns:repeat(3,1fr)}.predict>div{background:#fff;border:1px solid var(--line);min-height:190px}.predict b{font-size:calc(23px*var(--visualTextScale)*var(--globalTextScale))}.predict p{font-size:calc(18px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}.predict span{display:inline-block;background:var(--coral);border-radius:999px;padding:7px 16px;margin-top:10px}
+.dataTable{width:min(1000px,100%);border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:20px;font-size:calc(19px*var(--visualTextScale)*var(--globalTextScale));background:#fff;border:1px solid #cad9dc}.dataTable th,.dataTable td{padding:14px 16px;border-bottom:1px solid #dde7e9;border-right:1px solid #dde7e9;text-align:center}.dataTable th:first-child,.dataTable td:first-child{text-align:left}.dataTable th{background:var(--blue)}.dataTable tr:nth-child(3) td{background:var(--mint)}.answer{font-size:calc(22px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}.chartBox{width:min(1050px,100%);background:#fff;border:1px solid #d7e3e5;border-radius:26px;padding:24px}.chartBox h3{margin:0 0 22px;font-size:calc(27px*var(--visualTextScale)*var(--globalTextScale))}.hbars div{display:grid;grid-template-columns:230px 1fr;gap:14px;align-items:center}.hbars label{font-size:calc(18px*var(--visualTextScale)*var(--globalTextScale));font-weight:700}.hbars span{font-size:calc(18px*var(--visualTextScale)*var(--globalTextScale))}.two-compare,.compareSlide{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:100%}.two-compare>div,.miniSlide{background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px;min-height:210px}.two-compare b{font-size:calc(25px*var(--visualTextScale)*var(--globalTextScale))}.compareSlide h4{font-size:calc(21px*var(--visualTextScale)*var(--globalTextScale));margin:0 0 10px}.weakTitle,.strongTitle{font-size:calc(21px*var(--visualTextScale)*var(--globalTextScale));font-weight:700}.palette{display:flex;width:100%;height:190px;border-radius:28px;overflow:hidden;border:1px solid var(--line)}.palette>div{display:grid;place-items:center;text-align:center;padding:10px;font-size:calc(21px*var(--visualTextScale)*var(--globalTextScale));font-weight:700}.palette>div:nth-child(1){background:#f7f8f5}.palette>div:nth-child(2){background:var(--navy);color:#fff}.palette>div:nth-child(3){background:var(--accent);color:#fff}.builder{display:grid;grid-template-columns:1fr 230px;gap:20px;width:100%;height:300px}.canvasDrop{text-align:left;display:flex;align-content:flex-start;gap:8px;flex-wrap:wrap}
+.timePath{grid-template-columns:repeat(5,1fr)}.timePath>div{font-size:calc(23px*var(--visualTextScale)*var(--globalTextScale))}.timePath>div:nth-child(4){background:var(--mint)}.timePath>div:nth-child(5){background:var(--coral)}.threeMoves{grid-template-columns:repeat(3,1fr)}.threeMoves>div{font-size:calc(28px*var(--visualTextScale)*var(--globalTextScale))}.threeMoves>div:nth-child(3){background:var(--mint)}.closingMoves{grid-template-columns:repeat(4,1fr)}.closingMoves span{background:var(--lav);font-size:calc(22px*var(--visualTextScale)*var(--globalTextScale))}.closingMoves span:nth-child(2){background:var(--blue)}.closingMoves span:nth-child(3){background:var(--mint)}.closingMoves span:nth-child(4){background:var(--coral)}.qa{grid-template-columns:repeat(5,1fr)}.qa>div{font-size:calc(20px*var(--visualTextScale)*var(--globalTextScale))}.qa>div:nth-child(4){background:var(--mint)}.qa>div:nth-child(5){background:var(--coral)}.scriptCard{width:min(1000px,100%);background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px 34px;box-shadow:0 10px 32px rgba(24,48,51,.05)}.scriptCard p{margin:0 0 14px;font-size:calc(23px*var(--visualTextScale)*var(--globalTextScale));line-height:1.35}.scriptCard p:last-child{margin-bottom:0}.hotseat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;width:min(1000px,100%);text-align:center}.hotseat b{grid-column:1/-1;background:var(--coral);padding:26px;border-radius:22px}.hotseat span{background:var(--blue);padding:26px;border-radius:20px;font-size:calc(21px*var(--visualTextScale)*var(--globalTextScale));font-weight:700}
+.figure-routine{position:relative;width:min(1200px,98%);height:360px}.routine-node{position:absolute;z-index:3;left:var(--x);top:var(--y);transform:translate(-50%,-50%);padding:18px 25px;border-radius:999px;background:var(--blue);font-size:calc(21px*var(--visualTextScale)*var(--globalTextScale));font-weight:700;box-shadow:0 8px 26px rgba(24,48,51,.06)}.routine-node:nth-of-type(2){background:var(--aqua)}.routine-node:nth-of-type(3){background:var(--mint)}.routine-node:nth-of-type(4){background:var(--gold)}
+/* menu */
+.menu{position:fixed;right:24px;bottom:30px;z-index:80}.menu-btn{border:1px solid #b9cdd1;background:#fff;color:var(--ink);border-radius:999px;padding:10px 16px;font:700 16px Garamond,serif;box-shadow:0 10px 35px rgba(24,48,51,.12);cursor:pointer}.menu-panel{display:none;position:absolute;right:0;bottom:48px;width:350px;max-height:72vh;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:15px;box-shadow:0 24px 80px rgba(24,48,51,.18)}.menu-panel.open{display:block}.menu-panel button{width:100%;border:0;background:var(--soft);border-radius:13px;padding:9px 11px;margin:3px 0;text-align:left;font:16px Garamond,serif;color:var(--ink);cursor:pointer}.menu-panel button:hover{background:var(--blue)}.menu-panel label{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin:11px 0 4px}.menu-panel input[type=range]{width:100%}.menu-section{border-top:1px solid var(--line);margin-top:10px;padding-top:9px}.progress{position:fixed;left:0;right:0;bottom:0;height:4px;background:#edf3f4;z-index:70}.progress span{display:block;height:100%;background:var(--accent);width:0}.route-choice:focus-visible,.menu-btn:focus-visible,.menu-panel button:focus-visible{outline:3px solid rgba(216,122,81,.45);outline-offset:2px}
+@media(max-width:950px){.slide{padding:20px 24px 30px}.slide-title{font-size:calc(38px*var(--titleScale))}.key-points{grid-template-columns:1fr 1fr}.visual-shell{padding:18px}.route-overview-cards,.pillars,.cards3,.steps4,.sectionmap,.five,.decision,.timelineEx,.predict,.pass-grid{grid-template-columns:1fr 1fr}.route-overview{height:420px}.five-nodes{grid-template-columns:1fr 1fr 1fr}.moving-dot{display:none}.study-tree{transform:scale(.88)}.menu{right:14px;bottom:22px}}
+
+
+/* v3 publication refinements */
+:root{--dockSafe:68px}
+.slide{padding-right:calc(52px + var(--dockSafe));}
+.presenter-line{margin:-2px 0 16px;font-size:clamp(18px,1.45vw,25px);color:var(--accent);font-weight:700;letter-spacing:.01em}
+/* seamless edge menu */
+.menu{right:14px;top:50%;bottom:auto;transform:translateY(-50%);z-index:90}
+.menu-btn{width:42px;height:58px;padding:0;border:1px solid rgba(24,48,51,.12);border-radius:16px;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 28px rgba(24,48,51,.08);font:700 18px/1 Garamond,serif;display:grid;place-items:center;transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+.menu-btn:hover{transform:translateX(-2px);background:#fff;box-shadow:0 12px 34px rgba(24,48,51,.14)}
+.menu-panel{right:52px;bottom:auto;top:50%;transform:translateY(-50%);width:min(370px,calc(100vw - 90px));max-height:82vh}
+.menu-panel.open{display:block;animation:menuIn .22s cubic-bezier(.2,.8,.2,1)}
+@keyframes menuIn{from{opacity:0;transform:translateY(-50%) translateX(10px) scale(.985)}to{opacity:1;transform:translateY(-50%) translateX(0) scale(1)}}
+/* learning orbit */
+.learning-orbit{position:relative;width:min(1120px,96%);height:420px}
+.orbit-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.orbit-track{fill:none;stroke:#e2ecee;stroke-width:7;stroke-linecap:round}
+.orbit-accent{stroke:var(--accent);stroke-width:4;filter:drop-shadow(0 4px 6px rgba(216,122,81,.08))}
+.orbit-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:240px;height:150px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-content:center;text-align:center;box-shadow:0 18px 50px rgba(24,48,51,.08);z-index:4}
+.orbit-core span{font-size:calc(18px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}.orbit-core b{font-size:calc(25px*var(--visualTextScale)*var(--globalTextScale));margin-top:5px}
+.orbit-node{position:absolute;z-index:5;width:200px;min-height:116px;border-radius:26px;padding:16px;text-align:center;display:grid;align-content:center;background:var(--blue);box-shadow:0 12px 34px rgba(24,48,51,.06)}
+.orbit-node>span{font-size:13px;letter-spacing:.1em;color:var(--muted)}.orbit-node>b{font-size:calc(26px*var(--visualTextScale)*var(--globalTextScale))}.orbit-node>small{font-size:calc(16px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted);margin-top:4px}
+.node-predict{left:5%;top:7%;background:var(--lav)}.node-see{right:5%;top:7%;background:var(--blue)}.node-try{right:6%;bottom:5%;background:var(--mint)}.node-retrieve{left:6%;bottom:5%;background:var(--coral)}
+.orbit-spark{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--accent);left:50%;top:12%;box-shadow:0 0 0 10px rgba(216,122,81,.12);z-index:8;opacity:0}
+/* slide 21 decision branches */
+.concept-decision{position:relative;width:min(1180px,98%);height:390px}
+.decision-seed{position:absolute;z-index:5;left:50%;top:8px;transform:translateX(-50%);width:360px;padding:18px 22px;border-radius:24px;background:var(--lav);text-align:center;box-shadow:0 10px 30px rgba(24,48,51,.05)}
+.decision-seed small{display:block;font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.09em}.decision-seed b{display:block;font-size:calc(26px*var(--visualTextScale)*var(--globalTextScale));margin-top:4px}
+.decision-svg{position:absolute;inset:0;width:100%;height:100%}
+.decision-branches{position:absolute;left:2%;right:2%;top:210px;display:grid;grid-template-columns:repeat(3,1fr);gap:25px;z-index:5}
+.decision-branch{border-radius:26px;background:#fff;border:1px solid var(--line);padding:18px 20px;text-align:center;box-shadow:0 10px 28px rgba(24,48,51,.04)}
+.decision-branch:nth-child(1){background:var(--blue)}.decision-branch:nth-child(2){background:var(--aqua)}.decision-branch:nth-child(3){background:var(--mint)}
+.decision-branch span{display:block;font-size:calc(17px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}.decision-branch b{display:block;font-size:calc(28px*var(--visualTextScale)*var(--globalTextScale));margin:4px 0}.decision-branch small{font-size:calc(15px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}
+.decision-rule{position:absolute;left:50%;bottom:2px;transform:translateX(-50%);padding:10px 20px;border-radius:999px;background:var(--ink);color:#fff;font-size:calc(17px*var(--visualTextScale)*var(--globalTextScale));z-index:6}
+/* real result comparison */
+.result-compare{display:grid;grid-template-columns:1fr 1fr;gap:26px;width:min(1180px,100%)}
+.result-panel{min-width:0}.panel-label{font-size:calc(18px*var(--visualTextScale)*var(--globalTextScale));font-weight:700;margin:0 0 10px;color:var(--muted)}
+.result-slide-mock{min-height:310px;border-radius:26px;padding:24px;background:#fff;border:1px solid #d6e2e4;box-shadow:0 12px 30px rgba(24,48,51,.04)}
+.result-slide-mock h3{margin:0 0 28px;font-size:calc(26px*var(--visualTextScale)*var(--globalTextScale));line-height:1.08}.result-slide-mock.improved h3{font-size:calc(28px*var(--visualTextScale)*var(--globalTextScale))}
+.result-bars{display:grid;gap:20px}.result-row{display:grid;grid-template-columns:115px 1fr 42px;align-items:center;gap:10px}.row-label{font-size:calc(16px*var(--visualTextScale)*var(--globalTextScale));font-weight:700;color:var(--muted)}
+.bar-track{height:30px;border-radius:999px;background:#edf3f4;overflow:hidden}.bar-fill{height:100%;width:var(--bar);transform-origin:left center;border-radius:999px}.weak-bar{background:#a9cbd8}.control-bar{background:#a9cbd8}.focus-bar{background:var(--accent)}
+.result-row>b{font-size:calc(17px*var(--visualTextScale)*var(--globalTextScale));text-align:right}.mock-note{font-size:calc(15px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted);margin:24px 0 0;line-height:1.25}.mock-note strong{color:var(--ink)}
+/* graded activities */
+.graded-activity .toolbox button{position:relative;transition:opacity .2s ease,transform .2s ease,background .2s ease}.graded-activity .toolbox button.locked{opacity:.45;cursor:default}.zone.correct-zone{border-color:#83b78c;background:#f4fbf4}.zone.wrong-zone{border-color:#d7816a;background:#fff7f3}.zone .placed-card{margin:0!important;background:var(--mint)!important;color:var(--ink);cursor:default!important}.activity-controls{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:12px;min-height:46px}.activity-feedback{min-width:min(630px,74%);border-radius:16px;padding:10px 14px;background:#fff;border:1px solid var(--line);font-size:calc(16px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted);text-align:left}.activity-feedback.good{border-color:#83b78c;background:#f1faf2;color:#31653b}.activity-feedback.bad{border-color:#dfa18d;background:#fff4ef;color:#8b422c}.reset-activity,.check-slide{border:0;border-radius:14px;padding:11px 16px;background:var(--ink);color:#fff;font:700 15px Garamond,serif;cursor:pointer}.builder-controls{justify-content:flex-start}.checkable-builder .canvasDrop{position:relative}.checkable-builder .canvasDrop::after{content:'Click a placed item to remove it';position:absolute;right:14px;bottom:10px;font-size:13px;color:var(--muted)}
+/* Thank-you */
+.thankyou-wrap{text-align:center;display:grid;place-items:center;gap:18px}.thankyou-mark{display:flex;align-items:baseline;gap:12px}.thankyou-mark span{font-size:calc(27px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}.thankyou-mark b{font-size:calc(48px*var(--visualTextScale)*var(--globalTextScale));color:var(--ink)}.thankyou-name{font-size:calc(23px*var(--visualTextScale)*var(--globalTextScale));font-weight:700;color:var(--accent);margin:0}.thankyou-moral{max-width:760px;font-size:calc(20px*var(--visualTextScale)*var(--globalTextScale));line-height:1.35;color:var(--muted);margin:0}
+/* presentation-safe motion preferences */
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.moving-dot,.orbit-spark{display:none!important}}
+@media(max-width:950px){.slide{padding-right:58px}.menu{right:8px}.menu-panel{right:48px}.learning-orbit{height:500px}.orbit-core{width:200px;height:130px}.orbit-node{width:165px}.result-compare,.decision-branches{grid-template-columns:1fr}.concept-decision{height:560px}.decision-svg{display:none}.decision-branches{top:110px}.decision-rule{bottom:0}.result-row{grid-template-columns:100px 1fr 38px}}
+
+
+/* final publication QA fixes */
+.slide[data-idx="0"] .slide-title::after{content:'Assist. Prof. Yash Munnalal Gupta';display:block;margin-top:10px;font-size:clamp(18px,1.45vw,25px);line-height:1.15;color:var(--accent);font-weight:700;letter-spacing:.01em}
+@media(max-height:820px){
+ .graded-activity{grid-template-columns:.9fr 1.1fr;gap:14px}
+ .graded-activity .toolbox{min-height:150px;padding:10px}
+ .graded-activity .toolbox button{padding:8px 10px;margin:4px 0;font-size:calc(16px*var(--visualTextScale)*var(--globalTextScale))}
+ .graded-activity .zones{gap:5px}
+ .graded-activity .zone{min-height:58px;padding:5px 8px;border-radius:14px}
+ .graded-activity .zone h4{font-size:calc(15px*var(--visualTextScale)*var(--globalTextScale));margin-bottom:2px}
+ .graded-activity .zone [data-dropzone]{min-height:26px}
+ .activity-controls{margin-top:4px;min-height:36px}
+ .activity-feedback{padding:7px 11px;font-size:calc(14px*var(--visualTextScale)*var(--globalTextScale))}
+ .reset-activity,.check-slide{padding:8px 12px;font-size:13px}
+}
+
+/* FINAL publication additions */
+.visual-shell{position:relative}.illustrative-note.compact{position:absolute;right:18px;bottom:12px;font-size:13px;color:var(--muted)}.heuristic-note{margin-top:14px;font-size:calc(15px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted);text-align:center}
+.animation-flow{position:relative;width:min(1240px,99%);height:390px}.animation-flow-svg{position:absolute;inset:18px 0 0;width:100%;height:330px;overflow:visible}.animation-logic-path{stroke:#8fbdb5;stroke-width:4;stroke-linecap:round}.logic-node{position:absolute;width:18%;min-height:112px;border-radius:24px;padding:17px 14px;text-align:center;background:#fff;border:1px solid var(--line);box-shadow:0 12px 30px rgba(24,48,51,.045)}.logic-node span,.qa-step span{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font-size:14px;font-weight:700}.logic-node b{display:block;font-size:calc(22px*var(--visualTextScale)*var(--globalTextScale));margin:8px 0 2px}.logic-node small{font-size:calc(15px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}.logic-node.n1{left:0;top:168px;background:var(--lav)}.logic-node.n2{left:20.5%;top:52px;background:var(--blue)}.logic-node.n3{left:41%;top:168px;background:var(--aqua)}.logic-node.n4{left:61.5%;top:52px;background:var(--mint)}.logic-node.n5{right:0;top:168px;background:var(--coral)}.logic-rule{position:absolute;left:50%;bottom:0;transform:translateX(-50%);white-space:nowrap;border-radius:999px;background:var(--ink);color:#fff;padding:10px 18px;font-size:calc(15px*var(--visualTextScale)*var(--globalTextScale))}
+.road-map{position:relative;width:min(1180px,98%);height:380px}.road-seed{position:absolute;left:50%;top:8px;transform:translateX(-50%);z-index:4;border-radius:24px;background:#fff;border:1px solid var(--line);padding:15px 28px;text-align:center}.road-seed small{display:block;color:var(--muted);font-size:calc(14px*var(--visualTextScale)*var(--globalTextScale))}.road-seed b{font-size:calc(24px*var(--visualTextScale)*var(--globalTextScale))}.road-svg{position:absolute;inset:0;width:100%;height:100%}.road-svg .draw-path{stroke:#8fbdb5;stroke-width:3}.road-branches{position:absolute;left:0;right:0;bottom:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.road-card{border-radius:24px;padding:19px;background:var(--blue);text-align:center;min-height:142px}.road-card:nth-child(2){background:var(--aqua)}.road-card:nth-child(3){background:var(--mint)}.road-card span{display:block;font-size:calc(15px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted);text-transform:uppercase;letter-spacing:.07em}.road-card b{display:block;font-size:calc(23px*var(--visualTextScale)*var(--globalTextScale));margin:9px 0}.road-card small{font-size:calc(15px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}
+.qa-flow-map{position:relative;width:min(1220px,99%);height:330px}.qa-flow-svg{position:absolute;inset:12px 0 0;width:100%;height:290px}.qa-flow-svg .draw-path{stroke:#8fbdb5;stroke-width:3.5}.qa-step{position:absolute;width:18%;min-height:112px;border-radius:23px;padding:14px;text-align:center;background:var(--lav);border:1px solid rgba(24,48,51,.06)}.qa-step b{display:block;margin:7px 0 1px;font-size:calc(21px*var(--visualTextScale)*var(--globalTextScale))}.qa-step small{color:var(--muted);font-size:calc(14px*var(--visualTextScale)*var(--globalTextScale))}.qa-step.q1{left:0;top:144px}.qa-step.q2{left:20.5%;top:50px;background:var(--blue)}.qa-step.q3{left:41%;top:144px;background:var(--aqua)}.qa-step.q4{left:61.5%;top:50px;background:var(--mint)}.qa-step.q5{right:0;top:144px;background:var(--coral)}
+.example-trigger{position:absolute;right:18px;top:16px;z-index:22;border:1px solid rgba(24,48,51,.12);border-radius:999px;padding:9px 14px;background:rgba(255,255,255,.94);color:var(--ink);font:700 15px Garamond,serif;cursor:pointer;box-shadow:0 6px 20px rgba(24,48,51,.07)}.example-trigger:hover{background:#fff}.example-layer{position:absolute;z-index:28;inset:12px;background:rgba(255,255,255,.985);border:1px solid var(--line);border-radius:25px;padding:42px 26px 24px;opacity:0;visibility:hidden;pointer-events:none;overflow:auto}.example-layer.open{opacity:1;visibility:visible;pointer-events:auto}.example-close{position:absolute;right:14px;top:12px;width:36px;height:36px;border:0;border-radius:50%;background:var(--ink);color:#fff;font-size:22px;line-height:1;cursor:pointer}.example-panel{width:100%;height:100%;display:grid;align-content:center;gap:18px}.example-heading{text-align:center}.example-heading small{display:block;color:var(--accent);font-weight:700;letter-spacing:.06em;text-transform:uppercase}.example-heading h2{font-size:calc(29px*var(--visualTextScale)*var(--globalTextScale));margin:5px 0 0}.example-five{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.example-five article{border-radius:20px;padding:15px;background:var(--lav);min-height:175px}.example-five article:nth-child(2){background:var(--blue)}.example-five article:nth-child(3){background:var(--aqua)}.example-five article:nth-child(4){background:var(--mint)}.example-five article:nth-child(5){background:var(--coral)}.example-five span{display:block;font-size:calc(13px*var(--visualTextScale)*var(--globalTextScale));color:var(--accent);font-weight:700}.example-five b{display:block;font-size:calc(15.5px*var(--visualTextScale)*var(--globalTextScale));line-height:1.22;margin:7px 0}.example-five em{font-style:normal;font-size:calc(13px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}.example-disclaimer{text-align:right;color:var(--muted);font-size:13px;margin:0}
+.speech-example{display:grid;grid-template-columns:.85fr 1.15fr;gap:20px}.speech-chart,.script-card{border-radius:22px;background:#fff;border:1px solid var(--line);padding:18px}.speech-chart{display:grid;align-content:center}.speech-bars{display:grid;gap:20px}.speech-bars>div{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center}.speech-bars label{font-size:calc(15px*var(--visualTextScale)*var(--globalTextScale));font-weight:700;color:var(--muted)}.speech-bars span{display:flex;width:var(--w);min-width:54px;height:32px;border-radius:999px;background:#aacbd5;color:var(--ink);align-items:center;justify-content:flex-end;padding-right:9px;font-weight:700}.speech-bars span.focus{background:var(--accent);color:#fff}.speech-scripts{display:grid;gap:12px}.script-card small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-weight:700}.script-card p{font-size:calc(16px*var(--visualTextScale)*var(--globalTextScale));line-height:1.25;margin:8px 0}.weak-script{background:#fff8f4}.strong-script{background:#f1faf5;border-color:#bad9c2}
+.question-card{justify-self:center;max-width:720px;border-radius:22px;padding:16px 24px;background:var(--lav);text-align:center}.question-card small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700}.question-card b{display:block;margin-top:6px;font-size:calc(22px*var(--visualTextScale)*var(--globalTextScale))}.answer-route{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.answer-card{border-radius:20px;padding:16px;background:var(--blue);min-height:135px}.answer-card:nth-child(2){background:var(--aqua)}.answer-card:nth-child(3){background:var(--mint)}.answer-card:nth-child(4){background:var(--coral)}.answer-card span{display:block;font-size:calc(13px*var(--visualTextScale)*var(--globalTextScale));text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700}.answer-card b{display:block;margin-top:8px;font-size:calc(16px*var(--visualTextScale)*var(--globalTextScale));line-height:1.23}
+@media(max-width:980px){.animation-flow{height:570px;display:grid;grid-template-columns:1fr 1fr;gap:10px}.animation-flow-svg{display:none}.logic-node{position:static;width:auto;min-height:auto}.logic-rule{position:static;transform:none;grid-column:1/-1;justify-self:center;white-space:normal}.road-map{height:auto}.road-svg{display:none}.road-seed{position:static;transform:none;margin:0 auto 12px}.road-branches,.answer-route,.example-five{position:static;grid-template-columns:1fr}.qa-flow-map{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}.qa-flow-svg{display:none}.qa-step{position:static;width:auto}.speech-example{grid-template-columns:1fr}}
+@media(max-height:760px) and (min-width:951px){.study-tree{height:400px;transform:scale(.90);transform-origin:center center}.figure-routine{width:min(1120px,94%)}.routine-node{padding:16px 20px}}
+@media(max-width:1300px) and (min-width:951px){.figure-routine{width:94%}.routine-node{padding-left:20px;padding-right:20px}}
+
+
+/* v4: kinetic typography and polished route animations — no red dots */
+.moving-dot,.orbit-spark{display:none!important}.model span::after{display:none!important}
+.hero-kinetic-box{position:relative;width:min(1220px,100%);height:min(430px,100%);display:grid;place-items:center;overflow:hidden}.kinetic-row{position:relative;width:100%;height:100%;display:grid;grid-template-columns:repeat(3,1fr);align-items:center;gap:20px}.kinetic-word{position:relative;z-index:2;display:grid;place-items:center;text-align:center;min-height:220px;border-radius:34px;background:rgba(255,255,255,.72);border:1px solid rgba(24,48,51,.075);box-shadow:0 18px 60px rgba(24,48,51,.045);will-change:transform,opacity,filter}.kinetic-word b{display:block;font-size:clamp(54px,7vw,118px);line-height:.84;letter-spacing:-.055em}.kinetic-word span{display:block;margin-top:18px;font-size:calc(21px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted);font-weight:700}.story-word b{color:#8278aa}.screen-word b{color:#4f879f}.stage-word b{color:#628f72}.kinetic-ghost{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:clamp(82px,11vw,170px);line-height:.8;font-weight:700;letter-spacing:-.065em;opacity:0;pointer-events:none;z-index:3;white-space:nowrap;will-change:transform,opacity,filter}.kinetic-moral{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);width:90%;text-align:center;margin:0;font-size:calc(21px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted);opacity:0}.hero-kinetic-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 17% 64%,rgba(130,120,170,.08),transparent 34%),radial-gradient(ellipse at 50% 60%,rgba(79,135,159,.07),transparent 34%),radial-gradient(ellipse at 82% 64%,rgba(98,143,114,.08),transparent 34%);opacity:.9}
+.learning-loop-premium{position:relative;width:min(1180px,100%);height:410px}.loop-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:270px;height:170px;border-radius:44px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;text-align:center;align-content:center;box-shadow:0 20px 70px rgba(24,48,51,.08);z-index:4}.loop-center small{font-size:calc(16px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.loop-center b{font-size:calc(36px*var(--visualTextScale)*var(--globalTextScale));line-height:.94}.loop-step{position:absolute;width:230px;min-height:128px;border-radius:30px;padding:22px 20px;background:var(--blue);box-shadow:0 16px 50px rgba(24,48,51,.055);border:1px solid rgba(24,48,51,.06);will-change:transform,opacity}.loop-step span{display:block;color:var(--accent);font-weight:700;margin-bottom:3px}.loop-step b{font-size:calc(29px*var(--visualTextScale)*var(--globalTextScale))}.loop-step small{display:block;margin-top:6px;color:var(--muted);font-size:calc(17px*var(--visualTextScale)*var(--globalTextScale))}.step-predict{left:5%;top:26px;background:var(--lav)}.step-see{right:5%;top:26px;background:var(--blue)}.step-try{right:5%;bottom:26px;background:var(--mint)}.step-retrieve{left:5%;bottom:26px;background:var(--coral)}
+.route-premium{position:relative;width:min(1220px,100%);height:390px}.route-premium-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.route-soft-track,.method-track{fill:none;stroke:rgba(24,48,51,.12);stroke-width:4;stroke-linecap:round}.route-draw-line,.method-draw{fill:none;stroke:#78aaa4;stroke-width:4.5;stroke-linecap:round;filter:drop-shadow(0 8px 13px rgba(120,170,164,.13))}.route-caption{position:absolute;left:50%;top:12px;transform:translateX(-50%);z-index:3;padding:14px 26px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 12px 42px rgba(24,48,51,.055);text-align:center}.route-caption small{display:block;font-size:calc(14px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted);text-transform:uppercase;letter-spacing:.09em}.route-caption b{font-size:calc(22px*var(--visualTextScale)*var(--globalTextScale))}.route-premium-nodes{position:absolute;inset:0}.route-card-premium{position:absolute;z-index:4;width:190px;min-height:102px;border-radius:28px;padding:18px 15px;text-align:center;background:var(--blue);box-shadow:0 16px 48px rgba(24,48,51,.07);border:1px solid rgba(24,48,51,.06);will-change:transform,opacity}.proposal-premium .route-card-premium:nth-child(2),.defence-premium .route-card-premium:nth-child(2){background:var(--aqua)}.proposal-premium .route-card-premium:nth-child(3),.defence-premium .route-card-premium:nth-child(3){background:var(--mint)}.proposal-premium .route-card-premium:nth-child(4),.defence-premium .route-card-premium:nth-child(4){background:var(--gold)}.proposal-premium .route-card-premium:nth-child(5),.defence-premium .route-card-premium:nth-child(5){background:var(--coral)}.route-card-premium span{display:block;font-weight:700;color:var(--accent);font-size:calc(14px*var(--visualTextScale)*var(--globalTextScale));margin-bottom:4px}.route-card-premium b{font-size:calc(20px*var(--visualTextScale)*var(--globalTextScale));line-height:1.05}.route-card-premium.r1{left:2%;top:160px}.route-card-premium.r2{left:24%;top:55px}.route-card-premium.r3{left:43%;top:165px}.route-card-premium.r4{left:63%;top:230px}.route-card-premium.r5{right:1%;top:100px}
+.method-flow-premium{position:relative;width:min(1220px,100%);height:420px}.method-flow-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.method-node{position:absolute;z-index:3;width:205px;min-height:104px;border-radius:28px;padding:18px 14px;background:var(--blue);text-align:center;box-shadow:0 16px 50px rgba(24,48,51,.06);border:1px solid rgba(24,48,51,.07);will-change:transform,opacity}.method-node b{display:block;font-size:calc(22px*var(--visualTextScale)*var(--globalTextScale));margin-bottom:5px}.method-node span{font-size:calc(16px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted);line-height:1.15}.method-node.m1{left:1%;top:42px}.method-node.m2{left:23%;top:145px;background:var(--aqua)}.method-node.m3{left:43%;top:42px;background:var(--mint)}.method-node.m4{left:64%;top:145px;background:var(--gold)}.method-node.m5{right:1%;top:145px;background:var(--coral)}.method-rule{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);width:min(840px,90%);text-align:center;padding:16px 24px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--muted);font-size:calc(20px*var(--visualTextScale)*var(--globalTextScale));box-shadow:0 12px 44px rgba(24,48,51,.045)}
+.figure-routine-premium{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;width:min(1220px,100%);height:100%;align-items:center}.mini-chart-stage{position:relative;background:#fff;border:1px solid var(--line);border-radius:32px;padding:30px;min-height:340px;box-shadow:0 18px 60px rgba(24,48,51,.055);overflow:hidden}.mini-chart-stage h3{margin:0 0 34px;font-size:calc(27px*var(--visualTextScale)*var(--globalTextScale));line-height:1.05}.figure-bar{display:grid;grid-template-columns:190px 1fr;align-items:center;gap:16px;margin:24px 0}.figure-bar label{font-size:calc(17px*var(--visualTextScale)*var(--globalTextScale));font-weight:700;color:var(--muted)}.figure-bar span{display:flex;align-items:center;justify-content:flex-end;height:48px;border-radius:999px;padding-right:18px;background:var(--blue);font-weight:700;color:var(--ink);transform-origin:left center}.figure-bar.guided span{width:84%;background:var(--accent);color:#fff}.figure-bar.standard span{width:36%;background:var(--aqua)}.attention-lens{display:none!important}.routine-steps-premium{display:grid;gap:14px}.routine-steps-premium>div{border-radius:24px;padding:17px 22px;background:var(--lav);box-shadow:0 12px 44px rgba(24,48,51,.05);will-change:transform,opacity}.routine-steps-premium>div:nth-child(2){background:var(--blue)}.routine-steps-premium>div:nth-child(3){background:var(--aqua)}.routine-steps-premium>div:nth-child(4){background:var(--mint)}.routine-steps-premium>div:nth-child(5){background:var(--coral)}.routine-steps-premium b{display:block;font-size:calc(25px*var(--visualTextScale)*var(--globalTextScale))}.routine-steps-premium span{font-size:calc(17px*var(--visualTextScale)*var(--globalTextScale));color:var(--muted)}
+.final-kinetic{position:relative;width:min(1120px,100%);height:410px;display:grid;place-items:center;text-align:center;overflow:hidden}.final-word-stack{display:flex;gap:28px;align-items:center;justify-content:center}.final-word{display:inline-block;font-size:clamp(58px,8vw,128px);line-height:.85;font-weight:700;letter-spacing:-.06em}.fw-plan{color:#8278aa}.fw-show{color:#4f879f}.fw-guide{color:#628f72}.final-thanks{display:grid;gap:8px}.final-thanks b{font-size:calc(34px*var(--visualTextScale)*var(--globalTextScale))}.final-thanks span{font-size:calc(22px*var(--visualTextScale)*var(--globalTextScale));color:var(--accent);font-weight:700}.final-kinetic p{max-width:880px;margin:0;color:var(--muted);font-size:calc(22px*var(--visualTextScale)*var(--globalTextScale))}
+@media(max-width:950px){.hero-kinetic-box{height:500px}.kinetic-row{grid-template-columns:1fr}.kinetic-word{min-height:105px}.kinetic-word b{font-size:clamp(44px,12vw,78px)}.learning-loop-premium{height:520px}.loop-center{display:none}.loop-step{position:static;width:auto;margin:10px}.route-card-premium,.method-node{position:static;width:auto;margin:8px}.route-premium,.method-flow-premium{height:auto;display:grid;gap:8px}.route-premium-svg,.method-flow-svg{display:none}.route-premium-nodes{position:static;display:grid;grid-template-columns:1fr}.route-caption{position:static;transform:none;margin-bottom:8px}.figure-routine-premium{grid-template-columns:1fr}.final-word-stack{display:grid;gap:8px}.final-word{font-size:clamp(50px,14vw,86px)}}
+
+/* v5 deep-QA stability fixes */
+.slide[data-idx="0"].active{grid-template-rows:28px auto auto minmax(0,1fr) 24px}
+.slide[data-idx="0"] .presenter-line{display:none!important}
+.slide[data-idx="0"] .hero-kinetic-box{height:100%;min-height:0}
+.slide[data-idx="0"] .kinetic-row{height:calc(100% - 42px);min-height:0}
+.slide[data-idx="0"] .kinetic-word{min-height:clamp(112px,21vh,205px)}
+.slide[data-idx="0"] .kinetic-moral{bottom:2px}
+.visual-content{max-width:100%;max-height:100%}
+@media(max-height:820px) and (min-width:951px){
+ .slide[data-idx="0"] .kinetic-word{min-height:118px;border-radius:26px}
+ .slide[data-idx="0"] .kinetic-word b{font-size:clamp(48px,6.3vw,92px)}
+ .slide[data-idx="0"] .kinetic-word span{margin-top:10px;font-size:calc(18px*var(--visualTextScale)*var(--globalTextScale))}
+ .slide[data-idx="0"] .kinetic-moral{font-size:calc(17px*var(--visualTextScale)*var(--globalTextScale))}
+ .hero-kinetic-box{height:100%}
+ .learning-loop-premium{height:min(370px,100%)}
+ .route-premium{height:min(350px,100%)}
+ .method-flow-premium{height:min(370px,100%)}
+ .final-kinetic{height:min(360px,100%)}
+}
+@media(max-width:1400px) and (min-width:951px){
+ .kinetic-word b{font-size:clamp(50px,6.4vw,88px)}
+ .kinetic-word span{font-size:calc(18px*var(--visualTextScale)*var(--globalTextScale))}
+}
+
+/* v6 deep QA: collision-proof premium layouts */
+.route-caption{top:0;padding:10px 22px}.route-caption small{font-size:calc(12px*var(--visualTextScale)*var(--globalTextScale))}.route-caption b{font-size:calc(19px*var(--visualTextScale)*var(--globalTextScale))}
+.route-card-premium.r2{top:82px}.route-card-premium.r1{top:176px}.route-card-premium.r3{top:176px}.route-card-premium.r4{top:236px}.route-card-premium.r5{top:118px}
+@media(max-height:780px) and (min-width:951px){
+ .route-premium{height:min(350px,100%)}
+ .route-card-premium{min-height:88px;padding:13px 12px;border-radius:23px}
+ .route-card-premium span{font-size:calc(12px*var(--visualTextScale)*var(--globalTextScale))}
+ .route-card-premium b{font-size:calc(17px*var(--visualTextScale)*var(--globalTextScale))}
+ .route-card-premium.r1{top:166px}.route-card-premium.r2{top:76px}.route-card-premium.r3{top:166px}.route-card-premium.r4{top:224px}.route-card-premium.r5{top:112px}
+ .figure-routine-premium{gap:16px}
+ .mini-chart-stage{min-height:270px;padding:20px 22px;border-radius:25px}
+ .mini-chart-stage h3{margin-bottom:20px;font-size:calc(21px*var(--visualTextScale)*var(--globalTextScale))}
+ .figure-bar{grid-template-columns:145px 1fr;gap:10px;margin:16px 0}
+ .figure-bar label{font-size:calc(14px*var(--visualTextScale)*var(--globalTextScale))}
+ .figure-bar span{height:37px;padding-right:12px}
+ .routine-steps-premium{gap:7px}
+ .routine-steps-premium>div{padding:9px 15px;border-radius:18px}
+ .routine-steps-premium b{font-size:calc(19px*var(--visualTextScale)*var(--globalTextScale))}
+ .routine-steps-premium span{font-size:calc(13px*var(--visualTextScale)*var(--globalTextScale))}
+}
+@media(max-width:1380px) and (min-width:951px){
+ .route-card-premium{width:168px}
+ .route-card-premium b{font-size:calc(17px*var(--visualTextScale)*var(--globalTextScale))}
+ .route-caption{max-width:285px}
+}
+
+/* Presenter Edition: wireless clicker and GitHub Pages safeguards */
+.remote-hint{
+ position:fixed;left:50%;bottom:18px;transform:translateX(-50%);
+ z-index:120;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.92);
+ border:1px solid rgba(24,48,51,.12);box-shadow:0 10px 32px rgba(24,48,51,.10);
+ color:var(--muted);font:700 14px Garamond,Georgia,serif;opacity:0;pointer-events:none;
+ transition:opacity .35s ease, transform .35s ease;
+}
+.remote-hint.show{opacity:1;transform:translateX(-50%) translateY(-8px)}
+body.presenting .remote-hint{display:none}
+
+
+/* Presenter Edition v2: large-text defaults with automatic safe fitting */
+.slide{--fitTitle:1;--fitBullet:1;--fitVisualText:1;--fitVisual:1}
+.slide-title,.key-points,.visual-shell{transition:font-size .18s ease, transform .18s ease}
+.menu-panel .range-wide-note{font-size:13px;color:var(--muted);line-height:1.25;margin:5px 0 8px}
+@media(max-height:760px){
+ .slide.active{gap:calc(8px*var(--spaceScale));}
+ .slide-title{line-height:1.0}
+ .key-points li{line-height:1.12}
+}
+
+
+/* FINAL readability + overlap fixes */
+.key-points li{color:var(--ink)!important;font-weight:600}
+.key-points li::before{background:var(--ink)!important;opacity:.75}
+.visual-content *{overflow-wrap:break-word}
+
+/* Slide 04: no-overlap learning loop. Large-text friendly grid instead of absolute cards. */
+.slide[data-idx="3"] .learning-loop-premium{
+  position:relative;
+  width:min(1180px,100%);
+  height:100%;
+  min-height:0;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-rows:auto minmax(0,1fr);
+  gap:clamp(12px,1.5vw,24px);
+  align-items:stretch;
+}
+.slide[data-idx="3"] .loop-center{
+  position:static;
+  transform:none;
+  width:auto;
+  height:auto;
+  min-height:clamp(82px,14vh,132px);
+  grid-column:1/-1;
+  border-radius:30px;
+  padding:clamp(12px,1.4vw,22px);
+}
+.slide[data-idx="3"] .loop-step{
+  position:static;
+  width:auto;
+  min-height:clamp(118px,23vh,190px);
+  height:auto;
+  padding:clamp(14px,1.6vw,24px);
+  display:grid;
+  align-content:center;
+}
+.slide[data-idx="3"] .loop-step b{font-size:clamp(30px,3vw,48px)}
+.slide[data-idx="3"] .loop-step small{font-size:clamp(18px,1.55vw,28px);line-height:1.15}
+.slide[data-idx="3"] .loop-center b{font-size:clamp(34px,3.2vw,52px)}
+.slide[data-idx="3"] .loop-center small{font-size:clamp(16px,1.3vw,24px)}
+
+@media(max-width:1050px){
+ .slide[data-idx="3"] .learning-loop-premium{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto auto;}
+ .slide[data-idx="3"] .loop-step{min-height:120px}
+}
+@media(max-height:780px) and (min-width:951px){
+ .slide[data-idx="3"] .loop-center{min-height:70px;padding:10px 16px}
+ .slide[data-idx="3"] .loop-step{min-height:104px;padding:12px 14px;border-radius:22px}
+ .slide[data-idx="3"] .loop-step b{font-size:clamp(26px,2.6vw,39px)}
+ .slide[data-idx="3"] .loop-step small{font-size:clamp(15px,1.25vw,21px)}
+}
+
+/* Slide 41: more examples, less tiny text */
+.number-examples{
+  width:min(1220px,100%);
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(14px,1.8vw,26px);
+}
+.number-card{
+  min-height:clamp(220px,34vh,330px);
+  border-radius:30px;
+  padding:clamp(18px,2vw,30px);
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:0 14px 42px rgba(24,48,51,.05);
+  display:grid;
+  align-content:center;
+  gap:12px;
+}
+.number-card:nth-child(1){background:var(--blue)}
+.number-card:nth-child(2){background:var(--mint)}
+.number-card:nth-child(3){background:var(--coral)}
+.number-card small{
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--muted);
+  font-weight:700;
+  font-size:clamp(13px,1vw,17px);
+}
+.number-card h2{
+  margin:0;
+  font-size:clamp(46px,5vw,86px);
+  line-height:.9;
+  letter-spacing:-.035em;
+}
+.number-card p{
+  margin:0;
+  font-size:clamp(22px,2.05vw,34px);
+  line-height:1.12;
+  color:var(--ink);
+  font-weight:700;
+}
+.number-card em{
+  font-style:normal;
+  color:var(--muted);
+  font-size:clamp(17px,1.35vw,24px);
+  line-height:1.18;
+}
+@media(max-width:1050px){
+ .number-examples{grid-template-columns:1fr}
+ .number-card{min-height:140px}
+}
+@media(max-height:760px) and (min-width:951px){
+ .number-card{min-height:180px;padding:16px 18px;border-radius:24px}
+ .number-card h2{font-size:clamp(36px,4vw,64px)}
+ .number-card p{font-size:clamp(18px,1.65vw,27px)}
+ .number-card em{font-size:clamp(14px,1.1vw,18px)}
+}
+
+
+/* FINAL PASS 2: remove remaining layout collision risks */
+/* Slide 23 method flowchart: convert absolute route into responsive non-overlap grid */
+.slide[data-idx="22"] .method-flow-premium{
+  position:relative;
+  width:min(1220px,100%);
+  height:100%;
+  min-height:0;
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  grid-template-rows:minmax(0,1fr) auto;
+  gap:clamp(10px,1.2vw,18px);
+  align-items:center;
+}
+.slide[data-idx="22"] .method-flow-svg{display:none!important}
+.slide[data-idx="22"] .method-node{
+  position:static!important;
+  width:auto!important;
+  min-height:clamp(116px,22vh,185px);
+  height:auto;
+  padding:clamp(12px,1.35vw,20px);
+  display:grid;
+  align-content:center;
+}
+.slide[data-idx="22"] .method-node b{font-size:clamp(24px,2.2vw,40px);line-height:1.02}
+.slide[data-idx="22"] .method-node span{font-size:clamp(16px,1.25vw,24px);line-height:1.1}
+.slide[data-idx="22"] .method-rule{
+  position:static!important;
+  transform:none!important;
+  grid-column:1/-1;
+  justify-self:center;
+  width:min(920px,92%);
+  white-space:normal;
+  font-size:clamp(18px,1.6vw,30px);
+  padding:clamp(12px,1.3vw,18px) clamp(18px,2vw,30px);
+}
+
+/* On small or short screens, keep all cards in safe rows. */
+@media(max-width:1200px){
+  .slide[data-idx="22"] .method-flow-premium{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto auto}
+  .slide[data-idx="22"] .method-rule{grid-column:1/-1}
+}
+@media(max-height:760px) and (min-width:951px){
+  .slide[data-idx="22"] .method-node{min-height:94px;padding:10px 12px;border-radius:20px}
+  .slide[data-idx="22"] .method-node b{font-size:clamp(20px,1.8vw,31px)}
+  .slide[data-idx="22"] .method-node span{font-size:clamp(13px,1vw,18px)}
+  .slide[data-idx="22"] .method-rule{font-size:clamp(15px,1.2vw,22px);padding:9px 14px}
+}
+
+/* Hide internal scroll calculations where content is visually contained and auto-fitted. */
+.slide[data-idx="16"] .visual-content,
+.slide[data-idx="20"] .visual-content,
+.slide[data-idx="23"] .visual-content,
+.slide[data-idx="32"] .visual-content,
+.slide[data-idx="33"] .visual-content,
+.slide[data-idx="41"] .visual-content{overflow:hidden}
+
+/* Make slide 41 example cards a little more compact on short projectors. */
+@media(max-height:760px) and (min-width:951px){
+ .slide[data-idx="40"] .number-card{min-height:160px}
+}
+
+
+/* FINAL PASS 3: all font-size controls affect every slide */
+:root{--boxText:calc(var(--visualTextScale)*var(--globalTextScale)*var(--fitVisualText));}
+.slide[data-idx="3"] .loop-step b{font-size:clamp(calc(26px*var(--boxText)),calc(2.6vw*var(--boxText)),calc(44px*var(--boxText)))!important;line-height:1.02}
+.slide[data-idx="3"] .loop-step small{font-size:clamp(calc(14px*var(--boxText)),calc(1.1vw*var(--boxText)),calc(22px*var(--boxText)))!important;line-height:1.12}
+.slide[data-idx="3"] .loop-center b{font-size:clamp(calc(28px*var(--boxText)),calc(2.8vw*var(--boxText)),calc(46px*var(--boxText)))!important;line-height:.95}
+.slide[data-idx="3"] .loop-center small{font-size:clamp(calc(13px*var(--boxText)),calc(1.05vw*var(--boxText)),calc(19px*var(--boxText)))!important}
+.slide[data-idx="22"] .method-node b{font-size:clamp(calc(20px*var(--boxText)),calc(1.8vw*var(--boxText)),calc(34px*var(--boxText)))!important;line-height:1.02}
+.slide[data-idx="22"] .method-node span{font-size:clamp(calc(12px*var(--boxText)),calc(.95vw*var(--boxText)),calc(19px*var(--boxText)))!important;line-height:1.1}
+.slide[data-idx="22"] .method-rule{font-size:clamp(calc(14px*var(--boxText)),calc(1.2vw*var(--boxText)),calc(24px*var(--boxText)))!important;line-height:1.14}
+.number-card small{font-size:clamp(calc(11px*var(--boxText)),calc(.8vw*var(--boxText)),calc(15px*var(--boxText)))!important}
+.number-card h2{font-size:clamp(calc(36px*var(--boxText)),calc(4vw*var(--boxText)),calc(72px*var(--boxText)))!important;line-height:.88}
+.number-card p{font-size:clamp(calc(16px*var(--boxText)),calc(1.45vw*var(--boxText)),calc(27px*var(--boxText)))!important;line-height:1.08}
+.number-card em{font-size:clamp(calc(12px*var(--boxText)),calc(.95vw*var(--boxText)),calc(19px*var(--boxText)))!important;line-height:1.12}
+/* keep large-text sliders from creating collisions */
+.slide[data-idx="3"] .learning-loop-premium{overflow:hidden}
+.slide[data-idx="22"] .method-flow-premium{overflow:hidden}
+.number-card{overflow:hidden}
+
+
+/* FINAL PASS 4: slide 23 remains separated even at large text on 720p projectors */
+@media(max-height:760px) and (min-width:951px){
+ .slide[data-idx="22"] .method-flow-premium{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:auto auto auto!important;gap:8px!important}
+ .slide[data-idx="22"] .method-rule{grid-column:1/-1!important;align-self:end!important}
+}
+
+
+/* FINAL PASS 5: maximum text safety for slide 23 on 720p */
+@media(max-height:760px) and (min-width:951px){
+ .slide[data-idx="22"] .method-flow-premium{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:auto auto auto auto!important;gap:7px!important;align-items:stretch!important}
+ .slide[data-idx="22"] .method-node{min-height:72px!important;padding:8px 10px!important}
+ .slide[data-idx="22"] .method-node b{line-height:.98!important}
+ .slide[data-idx="22"] .method-node span{line-height:1.02!important}
+ .slide[data-idx="22"] .method-rule{grid-column:1/-1!important;align-self:end!important;margin-top:0!important}
+}
+
+</style></head><body><div class="deck"><section class="slide immersive" data-idx="0" data-layout="heroKinetic">
+<div class="meta-row"><div class="tag">Opening</div><div class="num">01 / 48</div></div>
+<h1 class="slide-title">Crafting Your Academic Story</h1>
+<ul class="key-points"><li>One research idea</li><li>Three forms</li><li>One guided route</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: When a research talk is hard to follow, where does the problem usually begin?</span></div><div><b>SAY</b><span>I am Yash Munnalal Gupta. Today we will build presentations people can follow, explain, and remember.</span></div><div><b>NEXT</b><span>Let us first feel the problem before we name the solution.</span></div></div>
+<div class="visual-shell"><div class="visual-content">
+<div class="hero-kinetic-box">
+<div aria-hidden="true" class="kinetic-ghost"></div>
+<div aria-label="Story Screen Stage" class="kinetic-row">
+<div class="kinetic-word story-word"><b>Story</b><span>what you say</span></div>
+<div class="kinetic-word screen-word"><b>Screen</b><span>what they see</span></div>
+<div class="kinetic-word stage-word"><b>Stage</b><span>how you guide the room</span></div>
+</div>
+<p class="kinetic-moral">The same research idea changes form — but the message stays coherent.</p>
+</div>
+</div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="1" data-layout="memoryTest">
+<div class="meta-row"><div class="tag">Diagnostic</div><div class="num">02 / 48</div></div>
+<h1 class="slide-title">What survives after ten seconds?</h1>
+<ul class="key-points"><li>If the screen disappears</li><li>What message remains?</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: What do you remember from each version?</span></div><div><b>SAY</b><span>If the screen disappears, the message should still remain.</span></div><div><b>NEXT</b><span>Now we can define the workshop around three forms of the same idea.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="memoryTest"><div><small>Overloaded</small><p>Presentation outcomes can be shaped by many variables, including previous confidence, attendance, feedback quality, rehearsal frequency, language anxiety, and prior experience across cohorts.</p></div><div class="after"><small>Memorable</small><b>Structured feedback produced the larger confidence gain.</b><div class="miniBars"><span style="width:25%">+4</span><span style="width:88%">+27</span></div></div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="2" data-layout="threePillars">
+<div class="meta-row"><div class="tag">Route</div><div class="num">03 / 48</div></div>
+<h1 class="slide-title">Story · Screen · Stage</h1>
+<ul class="key-points"><li>Story: what you say</li><li>Screen: what they see</li><li>Stage: how you guide attention</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask for a quick show of hands: which pillar feels hardest right now?</span></div><div><b>SAY</b><span>Story is the logic. Screen is the visual evidence. Stage is how the room experiences both.</span></div><div><b>NEXT</b><span>We will use one learning loop across all three sessions.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="pillars"><div><b>Story</b><p>What will you say?</p></div><div><b>Screen</b><p>How will you show it?</p></div><div><b>Stage</b><p>How will you guide the room?</p></div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="3" data-layout="learningLoopPremium">
+<div class="meta-row"><div class="tag">Learning design</div><div class="num">04 / 48</div></div>
+<h1 class="slide-title">Predict. See. Try. Retrieve.</h1>
+<ul class="key-points"><li>Predict first</li><li>See the principle</li><li>Try it yourself</li><li>Retrieve from memory</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Why might predicting before the answer help learning?</span></div><div><b>SAY</b><span>I will not give rules first. I will ask you to decide, then we will name the rule.</span></div><div><b>NEXT</b><span>We begin before slides: the speech, or story, you prepare as homework.</span></div></div>
+<div class="visual-shell"><div class="visual-content">
+<div class="learning-loop-premium">
+<div class="loop-center"><small>Modern workshop rhythm</small><b>Learn by doing</b></div>
+<div class="loop-step step-predict"><span>01</span><b>Predict</b><small>make a choice first</small></div>
+<div class="loop-step step-see"><span>02</span><b>See</b><small>watch the principle appear</small></div>
+<div class="loop-step step-try"><span>03</span><b>Try</b><small>apply it to a real slide</small></div>
+<div class="loop-step step-retrieve"><span>04</span><b>Retrieve</b><small>rebuild from memory</small></div>
+</div>
+</div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="4" data-layout="talkTypes">
+<div class="meta-row"><div class="tag">Session 1 · Story</div><div class="num">05 / 48</div></div>
+<h1 class="slide-title">Before slides: name the kind of talk</h1>
+<ul class="key-points"><li>Proposal: trust the plan</li><li>Defence: trust the choices</li><li>Conference: remember one result</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask participants to choose: proposal, defence, conference, or other.</span></div><div><b>SAY</b><span>A proposal asks for trust in the plan. A defence asks for trust in your choices. A conference talk asks for one result to travel.</span></div><div><b>NEXT</b><span>Once the situation is clear, section names become easier to interpret.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="cards3"><article><b>Proposal</b><p>Convince the audience the study should be done.</p></article><article><b>Thesis defence</b><p>Show what you did, why it is valid, and what it contributes.</p></article><article><b>Conference / paper</b><p>Make one research message memorable.</p></article></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="5" data-layout="sectionMap">
+<div class="meta-row"><div class="tag">Session 1 · Story</div><div class="num">06 / 48</div></div>
+<h1 class="slide-title">Section names are not the story</h1>
+<ul class="key-points"><li>Introduction = WHY</li><li>Methods = HOW</li><li>Results = WHAT</li><li>Discussion = SO WHAT</li><li>Conclusion = NOW WHAT</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Which section in your current talk is doing the weakest job?</span></div><div><b>SAY</b><span>Introduction answers WHY. Methods answer HOW. Results answer WHAT. Discussion answers SO WHAT. Conclusion answers NOW WHAT.</span></div><div><b>NEXT</b><span>The five questions become the memory map.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="sectionmap"><div>Introduction<br/><b>WHY?</b></div><div>Methods<br/><b>HOW?</b></div><div>Results<br/><b>WHAT?</b></div><div>Discussion<br/><b>SO WHAT?</b></div><div>Conclusion<br/><b>NOW WHAT?</b></div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="6" data-layout="memoryMap">
+<div class="meta-row"><div class="tag">Session 1 · Story</div><div class="num">07 / 48</div></div>
+<h1 class="slide-title">The memory map stays simple</h1>
+<ul class="key-points"><li>WHY</li><li>HOW</li><li>WHAT</li><li>SO WHAT</li><li>NOW WHAT</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Hide the slide for five seconds. Ask the room to reconstruct the sequence.</span></div><div><b>SAY</b><span>These five questions are not another outline. They are what the audience is silently asking while you speak.</span></div><div><b>NEXT</b><span>Now we zoom into the introduction, because this is where many talks lose the audience.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="five"><span>WHY</span><span>HOW</span><span>WHAT</span><span>SO WHAT</span><span>NOW WHAT</span></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="7" data-layout="funnel">
+<div class="meta-row"><div class="tag">Session 1 · Story</div><div class="num">08 / 48</div></div>
+<h1 class="slide-title">Introduction is a narrowing funnel</h1>
+<ul class="key-points"><li>Start broad</li><li>Narrow to the gap</li><li>Land on the objective</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Which part of your introduction is usually too long?</span></div><div><b>SAY</b><span>A strong introduction moves from what is known, to what is missing, to the question, to the contribution.</span></div><div><b>NEXT</b><span>Here is the funnel as a sentence pattern.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="funnel"><div>Background</div><div>Context</div><div>Gap</div><div>Objective</div><div>Contribution</div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="8" data-layout="whyExample">
+<div class="meta-row"><div class="tag">Session 1 · Story</div><div class="num">09 / 48</div></div>
+<h1 class="slide-title">WHY has four moves</h1>
+<ul class="key-points"><li>Known: what we understand</li><li>Missing: what is unresolved</li><li>Question: what you ask</li><li>Contribution: what the study adds</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: What is the missing piece in this example?</span></div><div><b>SAY</b><span>We know students use AI to learn new topics, but we do not know whether quick explanations become durable learning. The research question follows from that missing piece.</span></div><div><b>NEXT</b><span>Once WHY is clear, the audience is ready for HOW.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="steps4"><div><b>Known</b><p>Students use AI to learn unfamiliar topics.</p></div><div><b>Missing</b><p>We do not know if fast explanations become durable learning.</p></div><div><b>Question</b><p>Does guided AI use improve one-week recall?</p></div><div><b>Contribution</b><p>Compare guided AI learning with standard self-study.</p></div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="9" data-layout="methodAnchors">
+<div class="meta-row"><div class="tag">Session 1 · Story</div><div class="num">10 / 48</div></div>
+<h1 class="slide-title">HOW: one design sentence plus three anchors</h1>
+<ul class="key-points"><li>One design sentence</li><li>Who / what</li><li>Design / process</li><li>Measure / comparison</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask participants to explain their study design in one sentence.</span></div><div><b>SAY</b><span>Start with the design sentence. Then anchor who or what was studied, the design or process, and the main measure or comparison. Add technical detail only when it helps interpretation.</span></div><div><b>NEXT</b><span>After HOW, we separate result, interpretation, and conclusion.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="anchorGrid"><h2>To test this, we compared guided AI study with standard self-study.</h2><div class="reveal">Who / What</div><div class="reveal">Design / Process</div><div class="reveal">Measure / Comparison</div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="10" data-layout="certainty">
+<div class="meta-row"><div class="tag">Session 1 · Story</div><div class="num">11 / 48</div></div>
+<h1 class="slide-title">WHAT, SO WHAT, NOW WHAT need different certainty</h1>
+<ul class="key-points"><li>WHAT: report</li><li>SO WHAT: interpret</li><li>NOW WHAT: resolve</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Which word is safer: proves or suggests?</span></div><div><b>SAY</b><span>Do not use the same certainty level for every section. Results can be direct; discussion should respect limits.</span></div><div><b>NEXT</b><span>The same study now needs different routes for different academic situations.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="certainty"><div><b>WHAT</b><p>showed / changed / observed</p></div><div><b>SO WHAT</b><p>suggests / may support</p></div><div><b>NOW WHAT</b><p>should test / should revise</p></div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="11" data-layout="routeOverview">
+<div class="meta-row"><div class="tag">Session 1 · Story</div><div class="num">12 / 48</div></div>
+<h1 class="slide-title">One study, three academic routes</h1>
+<ul class="key-points"><li>Proposal: trust the plan</li><li>Defence: trust the choices</li><li>Conference: remember one result</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Which version do you need in the next six months?</span></div><div><b>SAY</b><span>A proposal emphasizes the plan. A defence emphasizes decisions and contribution. A conference talk emphasizes the result worth remembering.</span></div><div><b>NEXT</b><span>Now compare three routes, then build the one that fits your own research.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="route-overview">
+<div class="route-seed reveal">Same research</div>
+<svg aria-hidden="true" class="route-overview-svg" preserveaspectratio="none" viewbox="0 0 1000 330">
+<path class="draw-path" d="M500 58 C500 140 180 116 180 220"></path>
+<path class="draw-path" d="M500 58 C500 145 500 135 500 220"></path>
+<path class="draw-path" d="M500 58 C500 140 820 116 820 220"></path>
+</svg>
+<div class="route-overview-cards">
+<button class="route-choice reveal" data-route-jump="proposal"><b>Proposal</b><span>Trust the plan</span></button>
+<button class="route-choice reveal" data-route-jump="defence"><b>Defence</b><span>Trust the choices</span></button>
+<button class="route-choice reveal" data-route-jump="conference"><b>Conference</b><span>Remember one result</span></button>
+</div>
+</div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="12" data-layout="proposalRoutePremium">
+<div class="meta-row"><div class="tag">Session 1 · Story</div><div class="num">13 / 48</div></div>
+<h1 class="slide-title">Proposal route: make the plan believable</h1>
+<ul class="key-points"><li>Problem worth solving</li><li>Clear gap</li><li>Feasible design</li><li>Expected contribution</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Which step would make a committee trust the proposed study?</span></div><div><b>SAY</b><span>A proposal is future-facing. The audience needs to believe the question matters and the plan can answer it.</span></div><div><b>NEXT</b><span>Next, compare this with a defence.</span></div></div>
+<div class="visual-shell"><div class="visual-content">
+<div class="route-premium proposal-premium">
+<div class="route-caption"><small>future-facing plan</small><b>Problem → Expected contribution</b></div>
+<svg aria-hidden="true" class="route-premium-svg" preserveaspectratio="none" viewbox="0 0 1200 360">
+<path class="route-soft-track" d="M90 190 C260 45 380 75 505 175 C630 275 740 300 880 190 C990 105 1050 85 1110 132"></path>
+<path class="route-draw-line" d="M90 190 C260 45 380 75 505 175 C630 275 740 300 880 190 C990 105 1050 85 1110 132"></path>
+</svg>
+<div class="route-premium-nodes"><div class="route-card-premium r1"><span>01</span><b>Problem</b></div><div class="route-card-premium r2"><span>02</span><b>Gap</b></div><div class="route-card-premium r3"><span>03</span><b>Objectives</b></div><div class="route-card-premium r4"><span>04</span><b>Design</b></div><div class="route-card-premium r5"><span>05</span><b>Expected contribution</b></div></div>
+</div>
+</div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="13" data-layout="defenceRoutePremium">
+<div class="meta-row"><div class="tag">Session 1 · Story</div><div class="num">14 / 48</div></div>
+<h1 class="slide-title">Defence route: make the decisions defensible</h1>
+<ul class="key-points"><li>Research question</li><li>Method choices</li><li>Findings</li><li>Limits</li><li>Contribution</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Where will examiners challenge your reasoning?</span></div><div><b>SAY</b><span>A defence is retrospective. You must show what you did, why the choices were justified, and how far the conclusions can go.</span></div><div><b>NEXT</b><span>Next, see how a conference talk compresses the same study.</span></div></div>
+<div class="visual-shell"><div class="visual-content">
+<div class="route-premium defence-premium">
+<div class="route-caption"><small>defensible reasoning</small><b>Question → Contribution</b></div>
+<svg aria-hidden="true" class="route-premium-svg" preserveaspectratio="none" viewbox="0 0 1200 360">
+<path class="route-soft-track" d="M90 190 C260 45 380 75 505 175 C630 275 740 300 880 190 C990 105 1050 85 1110 132"></path>
+<path class="route-draw-line" d="M90 190 C260 45 380 75 505 175 C630 275 740 300 880 190 C990 105 1050 85 1110 132"></path>
+</svg>
+<div class="route-premium-nodes"><div class="route-card-premium r1"><span>01</span><b>Question</b></div><div class="route-card-premium r2"><span>02</span><b>Method choices</b></div><div class="route-card-premium r3"><span>03</span><b>Findings</b></div><div class="route-card-premium r4"><span>04</span><b>Limits</b></div><div class="route-card-premium r5"><span>05</span><b>Contribution</b></div></div>
+</div>
+</div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="14" data-layout="conferenceRoute">
+<div class="meta-row"><div class="tag">Session 1 · Story</div><div class="num">15 / 48</div></div>
+<h1 class="slide-title">Conference route: make one result travel</h1>
+<ul class="key-points"><li>Focused WHY</li><li>Enough HOW</li><li>Main WHAT</li><li>Meaning</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: If people remember one result tomorrow, which one should it be?</span></div><div><b>SAY</b><span>A conference talk is compressed. Give enough context and method to make the key result credible, then spend time on its meaning.</span></div><div><b>NEXT</b><span>Now turn the logic into your own sentences.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="conference-funnel"><div class="funnel-band reveal wide">Focused WHY</div><div class="funnel-band reveal mid">Enough HOW</div><div class="funnel-band reveal narrow">Main WHAT</div><div class="funnel-band reveal meaning">Meaning to remember</div><div class="pulse-ring"></div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="15" data-layout="threePass">
+<div class="meta-row"><div class="tag">Session 1 · Story</div><div class="num">16 / 48</div></div>
+<h1 class="slide-title">Build the opening in three passes</h1>
+<ul class="key-points"><li>Study a model</li><li>Complete a prompt</li><li>Write your version</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask participants to complete: We know ___, but ___. </span></div><div><b>SAY</b><span>First study one clear model. Then complete a partially specified prompt. Finally, write the same logic for your own research. Open the example only when the room needs it.</span></div><div><b>NEXT</b><span>Now we test the story before building any slide.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="pass-grid">
+<article class="pass-card reveal"><span class="pass-no">01</span><b>Study a model</b><p>Read one complete opening.</p></article>
+<article class="pass-card reveal"><span class="pass-no">02</span><b>Complete a prompt</b><p>Finish: “We know ___, but ___.”</p></article>
+<article class="pass-card reveal"><span class="pass-no">03</span><b>Write your version</b><p>Use the same logic for your study.</p></article>
+</div></div><button aria-expanded="false" class="example-trigger" type="button">Show five-sentence example</button><div aria-hidden="true" class="example-layer"><button aria-label="Close example" class="example-close" type="button">×</button>
+<div class="example-panel five-story-panel">
+<div class="example-heading"><small>Illustrative workshop example</small><h2>One study · five connected sentences</h2></div>
+<div class="example-five">
+<article><span>WHY</span><b>Students use AI to learn new topics, but durable learning is unclear.</b><em>We know…, but…</em></article>
+<article><span>HOW</span><b>To test this, we compare guided AI study with standard self-study.</b><em>To test this, we…</em></article>
+<article><span>WHAT</span><b>The guided-AI group shows the larger one-week recall gain.</b><em>The main pattern is…</em></article>
+<article><span>SO WHAT</span><b>This suggests structured AI use may support durable recall.</b><em>This suggests…</em></article>
+<article><span>NOW WHAT</span><b>A larger study should test more topics and learners.</b><em>The next step is…</em></article>
+</div>
+<p class="example-disclaimer">Illustrative communication example — not a reported trial.</p>
+</div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="16" data-layout="dragSections">
+<div class="meta-row"><div class="tag">Interactive · Story</div><div class="num">17 / 48</div></div>
+<h1 class="slide-title">Activity: build the research route</h1>
+<ul class="key-points"><li>Place each section</li><li>Match it to a question</li><li>Explain the choice</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask volunteers to place Introduction, Methods, Results, Discussion, Conclusion.</span></div><div><b>SAY</b><span>I will give section cards. Tell me where they belong and why.</span></div><div><b>NEXT</b><span>Now everyone writes the same map for their own research.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="dragGame graded-activity"><div class="toolbox"><button data-answer="WHY?" data-card="Introduction" draggable="true">Introduction</button><button data-answer="HOW?" data-card="Methods" draggable="true">Methods</button><button data-answer="WHAT?" data-card="Results" draggable="true">Results</button><button data-answer="SO WHAT?" data-card="Discussion" draggable="true">Discussion</button><button data-answer="NOW WHAT?" data-card="Conclusion" draggable="true">Conclusion</button></div><div class="zones"><div class="zone" data-zone="WHY?"><h4>WHY?</h4><div data-dropzone=""></div></div><div class="zone" data-zone="HOW?"><h4>HOW?</h4><div data-dropzone=""></div></div><div class="zone" data-zone="WHAT?"><h4>WHAT?</h4><div data-dropzone=""></div></div><div class="zone" data-zone="SO WHAT?"><h4>SO WHAT?</h4><div data-dropzone=""></div></div><div class="zone" data-zone="NOW WHAT?"><h4>NOW WHAT?</h4><div data-dropzone=""></div></div></div></div><div class="activity-controls"><div aria-live="polite" class="activity-feedback">Drag a card to a destination.</div><button class="reset-activity" type="button">Reset activity</button></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="17" data-layout="pitch">
+<div class="meta-row"><div class="tag">Interactive · Story</div><div class="num">18 / 48</div></div>
+<h1 class="slide-title">Activity: write your 60-second research story</h1>
+<ul class="key-points"><li>Write five sentences</li><li>Speak for 60 seconds</li><li>Listen for what survives</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask the listener: What was the main point you heard?</span></div><div><b>SAY</b><span>Your partner repeats what they remembered. That remembered version is data.</span></div><div><b>NEXT</b><span>Session 2 begins by making that story visible on the screen.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="worksheet"><label>WHY <input placeholder="We know…, but…"/></label><label>HOW <input placeholder="To test this, we…"/></label><label>WHAT <input placeholder="The main pattern was…"/></label><label>SO WHAT <input placeholder="This suggests…"/></label><label>NOW WHAT <input placeholder="The next step is…"/></label></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="18" data-layout="retrieveStory">
+<div class="meta-row"><div class="tag">Retrieval · Story</div><div class="num">19 / 48</div></div>
+<h1 class="slide-title">Close your notes: rebuild the route</h1>
+<ul class="key-points"><li>Close notes</li><li>Write the five questions</li><li>Add one bridge phrase</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask the room to say the five questions together.</span></div><div><b>SAY</b><span>Retrieval is how we make the structure available when the slide is gone.</span></div><div><b>NEXT</b><span>Now we move from story to screen.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="retrieval"><b>From memory:</b><span>5 questions</span><span>1 bridge phrase</span><span>1 sentence to improve</span></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="19" data-layout="attention">
+<div class="meta-row"><div class="tag">Session 2 · Screen</div><div class="num">20 / 48</div></div>
+<h1 class="slide-title">Slides direct attention</h1>
+<ul class="key-points"><li>Not storage</li><li>Create a reading path</li><li>Claim, evidence, meaning</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: On your busiest slide, where does the eye go first?</span></div><div><b>SAY</b><span>Every slide should answer: what should the audience look at first, second, and last?</span></div><div><b>NEXT</b><span>Before formatting, we choose the right visual form.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="eyePath"><div>1 Claim</div><div>2 Evidence</div><div>3 Meaning</div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="20" data-layout="conceptDecision">
+<div class="meta-row"><div class="tag">Session 2 · Screen</div><div class="num">21 / 48</div></div>
+<h1 class="slide-title">Concept first, formatting second</h1>
+<ul class="key-points"><li>Start with the job</li><li>Choose the visual form</li><li>Format after purpose is clear</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: What job does your next slide have?</span></div><div><b>SAY</b><span>The question is not “How do I make it pretty?” The question is “What job must this slide do?”</span></div><div><b>NEXT</b><span>Here is the decision map for visual forms.</span></div></div>
+<div class="visual-shell"><div class="visual-content">
+<div class="concept-decision">
+<div class="decision-seed reveal"><small>Start here</small><b>What must the audience do?</b></div>
+<svg aria-hidden="true" class="decision-svg" preserveaspectratio="none" viewbox="0 0 1200 390">
+<path class="draw-path" d="M600 92 C600 155 220 132 220 215"></path>
+<path class="draw-path" d="M600 92 C600 164 600 150 600 215"></path>
+<path class="draw-path" d="M600 92 C600 155 980 132 980 215"></path>
+</svg>
+<div class="decision-branches">
+<div class="decision-branch reveal"><span>Sequence</span><b>Flowchart</b><small>Then format the flow</small></div>
+<div class="decision-branch reveal"><span>Exact value</span><b>Table</b><small>Then format the lookup</small></div>
+<div class="decision-branch reveal"><span>Pattern</span><b>Chart</b><small>Then format the comparison</small></div>
+</div>
+<div class="decision-rule reveal">Purpose → visual form → formatting</div>
+</div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="21" data-layout="decisionMap">
+<div class="meta-row"><div class="tag">Session 2 · Screen</div><div class="num">22 / 48</div></div>
+<h1 class="slide-title">Choose the visual by the job it must do</h1>
+<ul class="key-points"><li>Sequence: flowchart</li><li>Time: timeline</li><li>Exact value: table</li><li>Pattern: chart</li><li>Meaning: diagram</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask participants to name one slide and identify its job.</span></div><div><b>SAY</b><span>Sequence becomes a flowchart. Time becomes a timeline. Exact values become a table. Patterns become a chart.</span></div><div><b>NEXT</b><span>First, methods.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="decision"><div><b>Sequence</b><span>Flowchart</span></div><div><b>Development over time</b><span>Timeline</span></div><div><b>Exact values</b><span>Table</span></div><div><b>Magnitude / pattern</b><span>Chart</span></div><div><b>Evidence landscape</b><span>Map</span></div><div><b>Interpretation</b><span>Meaning diagram</span></div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="22" data-layout="methodFlowPremium">
+<div class="meta-row"><div class="tag">Session 2 · Screen</div><div class="num">23 / 48</div></div>
+<h1 class="slide-title">When sequence matters, show the method as a flowchart</h1>
+<ul class="key-points"><li>Sequence</li><li>Grouping</li><li>Study-design logic</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Is your method a list, a sequence, or a comparison?</span></div><div><b>SAY</b><span>A flowchart is useful when the audience needs sequence, grouping, or design logic. If the method is simple, one sentence may be enough.</span></div><div><b>NEXT</b><span>Now see the AI-learning method as a flowchart.</span></div></div>
+<div class="visual-shell"><div class="visual-content">
+<div class="method-flow-premium">
+<svg aria-hidden="true" class="method-flow-svg" preserveaspectratio="none" viewbox="0 0 1200 410">
+<path class="method-track" d="M130 95 C290 95 310 205 465 205 S640 95 800 95 S965 205 1080 205"></path>
+<path class="method-draw" d="M130 95 C290 95 310 205 465 205 S640 95 800 95 S965 205 1080 205"></path>
+</svg>
+<div class="method-node m1"><b>Sample</b><span>who / what enters</span></div>
+<div class="method-node m2"><b>Assign</b><span>groups or conditions</span></div>
+<div class="method-node m3"><b>Measure</b><span>what evidence is collected</span></div>
+<div class="method-node m4"><b>Compare</b><span>what contrast answers the question</span></div>
+<div class="method-node m5"><b>Interpret</b><span>what the comparison means</span></div>
+<div class="method-rule">Use a flowchart only when sequence or grouping changes understanding.</div>
+</div>
+</div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="23" data-layout="flowchartEx">
+<div class="meta-row"><div class="tag">Example · Screen</div><div class="num">24 / 48</div></div>
+<h1 class="slide-title">Example slide: method as a flowchart</h1>
+<ul class="key-points"><li>Participants first</li><li>Groups second</li><li>Measures last</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: What detail can remain in speech or appendix?</span></div><div><b>SAY</b><span>Start with participants, then show the split, then show measurements. The slide appears in the same order as the explanation.</span></div><div><b>NEXT</b><span>Next, literature review.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="study-tree">
+<svg aria-hidden="true" class="tree-svg" preserveaspectratio="none" viewbox="0 0 1200 430">
+<path class="draw-path" d="M600 70 L600 120 L315 170"></path><path class="draw-path" d="M600 120 L885 170"></path>
+<path class="draw-path" d="M315 225 L315 285"></path><path class="draw-path" d="M885 225 L885 285"></path>
+<path class="draw-path" d="M315 340 L315 395"></path><path class="draw-path" d="M885 340 L885 395"></path>
+</svg>
+<div class="tree-node root reveal">Participants <span>n = 40</span></div>
+<div class="tree-node branch left reveal">Guided AI study</div><div class="tree-node branch right reveal">Standard self-study</div>
+<div class="tree-node measure left reveal">Immediate quiz</div><div class="tree-node measure right reveal">Immediate quiz</div>
+<div class="tree-node outcome left reveal">One-week recall</div><div class="tree-node outcome right reveal">One-week recall</div>
+</div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="24" data-layout="litMap">
+<div class="meta-row"><div class="tag">Session 2 · Screen</div><div class="num">25 / 48</div></div>
+<h1 class="slide-title">Literature review: show the landscape, not a citation wall</h1>
+<ul class="key-points"><li>Timeline: development</li><li>Evidence map: clusters</li><li>Gap map: what is missing</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Is your literature slide about time, clusters, or a missing piece?</span></div><div><b>SAY</b><span>Choose the visual form from the job: progression over time, clusters of evidence, or the gap that motivates the study. Do not turn every literature review into a timeline.</span></div><div><b>NEXT</b><span>Here is the same idea as a timeline.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="lit"><div>Timeline</div><div>Evidence map</div><div>Gap map</div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="25" data-layout="timelineEx">
+<div class="meta-row"><div class="tag">Example · Screen</div><div class="num">26 / 48</div></div>
+<h1 class="slide-title">Example slide: literature review as a timeline</h1>
+<ul class="key-points"><li>Show progression</li><li>End on the gap</li><li>Make the gap visible</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Where should the gap appear visually?</span></div><div><b>SAY</b><span>The final box is not just another citation; it is why your study exists.</span></div><div><b>NEXT</b><span>Now we move to results.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="timelineEx"><div class="step"><b>2019</b><p>AI tutors improve engagement</p></div><div class="step"><b>2021</b><p>Immediate understanding improves</p></div><div class="step"><b>2023</b><p>Prompt guidance matters</p></div><div class="gap step"><b>Gap</b><p>Durable learning after one week is still unclear</p></div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="26" data-layout="predictTableChart">
+<div class="meta-row"><div class="tag">Predict · Screen</div><div class="num">27 / 48</div></div>
+<h1 class="slide-title">Exact value or pattern?</h1>
+<ul class="key-points"><li>Exact value? Table</li><li>Pattern? Chart</li><li>Takeaway? Claim title</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Table or chart for an exact post-score? Table or chart for a pattern?</span></div><div><b>SAY</b><span>If I ask for the exact post-score, you need a table. If I ask which group improved more, you need a chart.</span></div><div><b>NEXT</b><span>First, the lookup task.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="predict"><div><b>Question A</b><p>What was the exact post-score?</p><span>Table</span></div><div><b>Question B</b><p>Which group improved more?</p><span>Chart</span></div><div><b>Question C</b><p>What should remain?</p><span>Claim title</span></div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="27" data-layout="tableEx">
+<div class="meta-row"><div class="tag">Example · Screen</div><div class="num">28 / 48</div></div>
+<h1 class="slide-title">Example slide: exact values need a table</h1>
+<ul class="key-points"><li>Precise lookup</li><li>Multiple values</li><li>Exact post-score</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: What was the guided AI group’s post-score?</span></div><div><b>SAY</b><span>This table is not wrong because it has numbers. It is useful because the task is lookup.</span></div><div><b>NEXT</b><span>Now use the same data for a pattern task.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><table class="dataTable step"><tr><th>Group</th><th>Pre</th><th>Post</th><th>Change</th></tr><tr><td>Standard self-study</td><td>60</td><td>65</td><td>+5</td></tr><tr><td>Guided AI study</td><td>61</td><td>79</td><td>+18</td></tr></table><p class="answer step">Lookup answer: <b>79</b></p><div class="illustrative-note compact">Illustrative workshop data</div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="28" data-layout="chartEx">
+<div class="meta-row"><div class="tag">Example · Screen</div><div class="num">29 / 48</div></div>
+<h1 class="slide-title">Example slide: patterns need a chart</h1>
+<ul class="key-points"><li>Fast comparison</li><li>Visible magnitude</li><li>Pattern first</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Which group improved more?</span></div><div><b>SAY</b><span>The exact numbers remain available, but the chart makes the difference visible at once.</span></div><div><b>NEXT</b><span>Now we make the message explicit with a claim title.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="chartBox"><h3 class="step">Guided AI produced the larger gain.</h3><div class="hbars step"><div><label>Standard self-study</label><span style="width:28%">+5</span></div><div><label>Guided AI study</label><span style="width:78%">+18</span></div></div></div><div class="illustrative-note compact">Illustrative workshop data</div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="29" data-layout="claimTitle">
+<div class="meta-row"><div class="tag">Session 2 · Screen</div><div class="num">30 / 48</div></div>
+<h1 class="slide-title">When a slide presents evidence, lead with the takeaway</h1>
+<ul class="key-points"><li>Claim title</li><li>Visual evidence</li><li>Strength matches the data</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Which title helps the audience interpret the evidence before they inspect it?</span></div><div><b>SAY</b><span>For evidence slides, a concise sentence headline can state the takeaway and the visual beneath it can support that claim. The wording must not be stronger than the data.</span></div><div><b>NEXT</b><span>Here is a before/after slide.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="two-compare"><div><small>Topic title</small><b>Presentation confidence</b></div><div><small>Claim title</small><b>Feedback produced the larger confidence gain.</b></div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="30" data-layout="claimCompare">
+<div class="meta-row"><div class="tag">Example · Screen</div><div class="num">31 / 48</div></div>
+<h1 class="slide-title">Example slide: weak vs strong result slide</h1>
+<ul class="key-points"><li>Same evidence</li><li>Clearer title</li><li>Faster memory</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Which title could someone repeat after ten seconds?</span></div><div><b>SAY</b><span>This is not decoration. The title is doing cognitive work.</span></div><div><b>NEXT</b><span>Now the whole slide needs visual hierarchy.</span></div></div>
+<div class="visual-shell"><div class="visual-content">
+<div class="result-compare">
+<article class="result-panel weak-panel reveal">
+<div class="panel-label">Weak result slide</div>
+<div class="result-slide-mock">
+<h3>Presentation confidence</h3>
+<div class="result-bars">
+<div class="result-row"><span class="row-label">Comparison</span><div class="bar-track"><div class="bar-fill weak-bar" style="--bar:18%"></div></div><b>+4</b></div>
+<div class="result-row"><span class="row-label">Feedback</span><div class="bar-track"><div class="bar-fill weak-bar" style="--bar:76%"></div></div><b>+27</b></div>
+</div>
+<p class="mock-note">Same color · topic title · audience must find the point</p>
+</div>
+</article>
+<article class="result-panel strong-panel reveal">
+<div class="panel-label">Improved result slide</div>
+<div class="result-slide-mock improved">
+<h3>Feedback produced the larger confidence gain.</h3>
+<div class="result-bars">
+<div class="result-row"><span class="row-label">Comparison</span><div class="bar-track"><div class="bar-fill control-bar" style="--bar:18%"></div></div><b>+4</b></div>
+<div class="result-row"><span class="row-label">Feedback</span><div class="bar-track"><div class="bar-fill focus-bar" style="--bar:76%"></div></div><b>+27</b></div>
+</div>
+<p class="mock-note"><strong>Claim first.</strong> Accent only the comparison that carries the message.</p>
+</div>
+</article>
+</div><div class="illustrative-note compact">Illustrative workshop data</div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="31" data-layout="hierarchy">
+<div class="meta-row"><div class="tag">Session 2 · Screen</div><div class="num">32 / 48</div></div>
+<h1 class="slide-title">Visual hierarchy is kindness</h1>
+<ul class="key-points"><li>Quiet canvas</li><li>Readable structure</li><li>One focal accent</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: What is the one accent point on your most important slide?</span></div><div><b>SAY</b><span>If everything is emphasized, nothing is emphasized.</span></div><div><b>NEXT</b><span>Animation should follow the same rule.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="palette"><div style="flex:6">60% quiet canvas</div><div style="flex:3">30% structure</div><div style="flex:1">10% accent</div></div><div class="heuristic-note">Starting heuristic — not a mathematical rule.</div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="32" data-layout="animationFlow">
+<div class="meta-row"><div class="tag">Session 2 · Screen</div><div class="num">33 / 48</div></div>
+<h1 class="slide-title">Animate the argument one step at a time</h1>
+<ul class="key-points"><li>Reveal only the next idea</li><li>Focus attention deliberately</li><li>Pause before meaning</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Which part of your method or result truly needs to appear step by step?</span></div><div><b>SAY</b><span>Use motion only when sequence changes understanding. Reveal the next idea, focus it, give the audience time to look, then explain the meaning.</span></div><div><b>NEXT</b><span>Now participants choose visual forms themselves.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="animation-flow">
+<svg aria-hidden="true" class="animation-flow-svg" preserveaspectratio="none" viewbox="0 0 1200 360"><path class="draw-path animation-logic-path" d="M90 190 C225 70 330 70 420 190 C510 310 635 310 720 190 C805 70 920 70 1110 190"></path></svg>
+<div class="logic-node n1 reveal"><span>1</span><b>Show context</b><small>Give orientation</small></div>
+<div class="logic-node n2 reveal"><span>2</span><b>Reveal evidence</b><small>Only the next step</small></div>
+<div class="logic-node n3 reveal"><span>3</span><b>Focus</b><small>Highlight the change</small></div>
+<div class="logic-node n4 reveal"><span>4</span><b>Pause</b><small>Let people look</small></div>
+<div class="logic-node n5 reveal"><span>5</span><b>Explain meaning</b><small>Return to the claim</small></div>
+<div class="logic-rule reveal">If motion does not change understanding, do not animate it.</div>
+</div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="33" data-layout="dragVisuals">
+<div class="meta-row"><div class="tag">Interactive · Screen</div><div class="num">34 / 48</div></div>
+<h1 class="slide-title">Activity: choose the right visual form</h1>
+<ul class="key-points"><li>Read the need</li><li>Choose the visual</li><li>Defend the choice</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: What is the audience trying to do?</span></div><div><b>SAY</b><span>The important part is not the answer alone; it is the reason for the choice.</span></div><div><b>NEXT</b><span>Now build one claim slide.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="dragGame graded-activity"><div class="toolbox"><button data-answer="Flowchart" data-card="Method sequence" draggable="true">Method sequence</button><button data-answer="Timeline / map" data-card="Literature gap" draggable="true">Literature gap</button><button data-answer="Table" data-card="Exact result" draggable="true">Exact result</button><button data-answer="Chart" data-card="Pattern" draggable="true">Pattern</button><button data-answer="Meaning diagram" data-card="Implication" draggable="true">Implication</button></div><div class="zones"><div class="zone" data-zone="Flowchart"><h4>Flowchart</h4><div data-dropzone=""></div></div><div class="zone" data-zone="Timeline / map"><h4>Timeline / map</h4><div data-dropzone=""></div></div><div class="zone" data-zone="Table"><h4>Table</h4><div data-dropzone=""></div></div><div class="zone" data-zone="Chart"><h4>Chart</h4><div data-dropzone=""></div></div><div class="zone" data-zone="Meaning diagram"><h4>Meaning diagram</h4><div data-dropzone=""></div></div></div></div><div class="activity-controls"><div aria-live="polite" class="activity-feedback">Drag a card to a destination.</div><button class="reset-activity" type="button">Reset activity</button></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="34" data-layout="slideBuilder">
+<div class="meta-row"><div class="tag">Interactive · Screen</div><div class="num">35 / 48</div></div>
+<h1 class="slide-title">Activity: assemble a one-claim slide</h1>
+<ul class="key-points"><li>One claim</li><li>One evidence source</li><li>One focal point</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: What can be moved to speech, appendix, or backup?</span></div><div><b>SAY</b><span>Do not polish first. Decide the claim and the evidence first.</span></div><div><b>NEXT</b><span>Before Stage, retrieve the screen logic.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="builder checkable-builder"><div class="canvasDrop" data-dropzone="">Drop slide pieces here</div><div class="toolbox"><button data-card="Claim title" data-role="claim" draggable="true">Claim title</button><button data-card="Evidence" data-role="evidence" draggable="true">Evidence</button><button data-card="Accent" data-role="accent" draggable="true">Accent</button><button data-card="Extra detail" data-role="extra" draggable="true">Extra detail</button></div></div><div class="activity-controls builder-controls"><button class="check-slide" type="button">Check my slide</button><div aria-live="polite" class="activity-feedback">Build the slide, then check it.</div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="35" data-layout="retrieveScreen">
+<div class="meta-row"><div class="tag">Retrieval · Screen</div><div class="num">36 / 48</div></div>
+<h1 class="slide-title">Close the examples: rebuild the design rule</h1>
+<ul class="key-points"><li>Audience job</li><li>Visual form</li><li>Claim</li><li>Focus</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: Exact value? Pattern? Method sequence? Literature gap?</span></div><div><b>SAY</b><span>You should be able to make the design decision without seeing the example.</span></div><div><b>NEXT</b><span>Now we take the same clarity into the room.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="retrieval"><b>From memory:</b><span>Audience job</span><span>Visual form</span><span>Claim</span><span>Focus</span></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="36" data-layout="stageBig">
+<div class="meta-row"><div class="tag">Session 3 · Stage</div><div class="num">37 / 48</div></div>
+<h1 class="slide-title">Stage guides attention through time</h1>
+<ul class="key-points"><li>Say</li><li>Show</li><li>Pause</li><li>Interpret</li><li>Invite</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: What should your audience focus on right now?</span></div><div><b>SAY</b><span>Screen controls space. Stage controls time.</span></div><div><b>NEXT</b><span>First, physical calm.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="timePath"><div>Say</div><div>Show</div><div>Pause</div><div>Interpret</div><div>Invite</div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="37" data-layout="presence">
+<div class="meta-row"><div class="tag">Session 3 · Stage</div><div class="num">38 / 48</div></div>
+<h1 class="slide-title">Calm is observable</h1>
+<ul class="key-points"><li>Pause key claims</li><li>Finish thought, then move gaze</li><li>Keep screen visible</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask which version sounded more credible and why.</span></div><div><b>SAY</b><span>Confidence is not a personality trait here. It is a set of visible choices.</span></div><div><b>NEXT</b><span>Next, make the logic audible.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="cards3"><article><b>Pause</b><p>Let the key sentence land.</p></article><article><b>Gaze</b><p>Finish a thought before moving.</p></article><article><b>Stance</b><p>Stay open and do not block the screen.</p></article></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="38" data-layout="roadSignMap">
+<div class="meta-row"><div class="tag">Session 3 · Stage</div><div class="num">39 / 48</div></div>
+<h1 class="slide-title">Road signs make logic audible</h1>
+<ul class="key-points"><li>Continue: build</li><li>Contrast: turn</li><li>Consequence: land</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask participants to choose a road sign for a limitation sentence.</span></div><div><b>SAY</b><span>Road signs are short relationship cues. They help listeners hear whether you are continuing, turning, or landing an implication.</span></div><div><b>NEXT</b><span>Now apply road signs to charts.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="road-map"><div class="road-seed reveal"><small>Ask yourself</small><b>How does the next idea relate?</b></div><svg aria-hidden="true" class="road-svg" preserveaspectratio="none" viewbox="0 0 1200 390"><path class="draw-path" d="M600 95 C600 160 220 145 220 245"></path><path class="draw-path" d="M600 95 C600 175 600 170 600 245"></path><path class="draw-path" d="M600 95 C600 160 980 145 980 245"></path></svg><div class="road-branches"><article class="road-card reveal"><span>Continue</span><b>“Now we turn to…”</b><small>Build the route</small></article><article class="road-card reveal"><span>Contrast</span><b>“However…”</b><small>Signal a turn</small></article><article class="road-card reveal"><span>Consequence</span><b>“So the implication is…”</b><small>Land the meaning</small></article></div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="39" data-layout="chartSpeech">
+<div class="meta-row"><div class="tag">Session 3 · Stage</div><div class="num">40 / 48</div></div>
+<h1 class="slide-title">Explain every chart in three moves</h1>
+<ul class="key-points"><li>Introduce</li><li>Orient</li><li>Interpret</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask pairs to explain the chart in 20 seconds.</span></div><div><b>SAY</b><span>Do not interpret before the audience knows how to read the display. Do not read every number before giving meaning.</span></div><div><b>NEXT</b><span>Numbers need similar discipline.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="threeMoves"><div>Introduce</div><div>Orient</div><div>Interpret</div></div></div><button aria-expanded="false" class="example-trigger" type="button">Compare two chart explanations</button><div aria-hidden="true" class="example-layer"><button aria-label="Close example" class="example-close" type="button">×</button>
+<div class="example-panel chart-speech-panel">
+<div class="example-heading"><small>Illustrative workshop data</small><h2>Guide the chart · do not read it</h2></div>
+<div class="speech-example">
+<div class="speech-chart"><div class="speech-bars"><div><label>Standard self-study</label><span style="--w:28%">+5</span></div><div><label>Guided AI study</label><span class="focus" style="--w:78%">+18</span></div></div></div>
+<div class="speech-scripts"><article class="script-card weak-script"><small>Reads the numbers</small><p>“The first group increased by 5. The second group increased by 18.”</p></article><article class="script-card strong-script"><small>Guides the audience</small><p><b>Introduce:</b> “This compares the gain across two study methods.”</p><p><b>Orient:</b> “Longer bars mean larger gains.”</p><p><b>Interpret:</b> “Guided AI shows the larger improvement.”</p></article></div>
+</div>
+</div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="40" data-layout="numbers">
+<div class="meta-row"><div class="tag">Session 3 · Stage</div><div class="num">41 / 48</div></div>
+<h1 class="slide-title">Say the pattern before the digits</h1>
+<ul class="key-points"><li>Approximate large numbers</li><li>Name direction</li><li>Explain why it matters</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: How would you say 54 to 63 to 82?</span></div><div><b>SAY</b><span>The screen can hold 8,679. Your voice can say nearly 9,000.</span></div><div><b>NEXT</b><span>Now combine speech with pointing.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="number-examples">
+<div class="number-card"><small>Large number</small><h2>8,679</h2><p>Say: nearly 9,000</p><em>Use speech for scale, not every digit.</em></div>
+<div class="number-card"><small>Trend</small><h2>54 → 63 → 82</h2><p>Say: rose steadily</p><em>Name the direction before reading values.</em></div>
+<div class="number-card"><small>Drop</small><h2>82 → 64</h2><p>Say: fell sharply</p><em>Tell the audience what changed and why it matters.</em></div>
+</div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide immersive" data-idx="41" data-layout="figureRoutinePremium">
+<div class="meta-row"><div class="tag">Session 3 · Stage</div><div class="num">42 / 48</div></div>
+<h1 class="slide-title">A five-beat figure routine</h1>
+<ul class="key-points"><li>Name the comparison</li><li>Point to evidence</li><li>Pause</li><li>Interpret</li><li>Return to the audience</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask a volunteer to try this routine with the chart.</span></div><div><b>SAY</b><span>Name the comparison, point to it, pause so people look, interpret, then return to the audience.</span></div><div><b>NEXT</b><span>Now finish the talk deliberately.</span></div></div>
+<div class="visual-shell"><div class="visual-content">
+<div class="figure-routine-premium">
+<div class="mini-chart-stage">
+<h3>Guided AI produced the larger gain.</h3>
+<div class="figure-bar standard"><label>Standard self-study</label><span>+5</span></div>
+<div class="figure-bar guided"><label>Guided AI study</label><span>+18</span></div>
+<div aria-hidden="true" class="attention-lens"></div>
+</div>
+<div class="routine-steps-premium">
+<div><b>Name</b><span>the comparison</span></div>
+<div><b>Point</b><span>to evidence</span></div>
+<div><b>Pause</b><span>let them look</span></div>
+<div><b>Interpret</b><span>state meaning</span></div>
+<div><b>Return</b><span>to the audience</span></div>
+</div>
+</div>
+</div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="42" data-layout="closing">
+<div class="meta-row"><div class="tag">Session 3 · Stage</div><div class="num">43 / 48</div></div>
+<h1 class="slide-title">Close with one moral</h1>
+<ul class="key-points"><li>Signal</li><li>Answer</li><li>Qualify</li><li>Invite and stop</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: What is the one moral of your presentation?</span></div><div><b>SAY</b><span>A strong close does not introduce new material. It resolves the route.</span></div><div><b>NEXT</b><span>After the close comes Q&amp;A.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="closingMoves"><span>Signal</span><span>Answer</span><span>Qualify</span><span>Invite &amp; stop</span></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="43" data-layout="qaFlow">
+<div class="meta-row"><div class="tag">Session 3 · Stage</div><div class="num">44 / 48</div></div>
+<h1 class="slide-title">Q&amp;A: answer first, then support</h1>
+<ul class="key-points"><li>Clarify briefly</li><li>Answer first</li><li>Support</li><li>Bound the claim</li><li>Close</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask: What is your likely hardest question?</span></div><div><b>SAY</b><span>Do not bury the answer in a long preamble. Clarify only if needed, answer, support the answer, state the boundary of the claim, and stop.</span></div><div><b>NEXT</b><span>Sometimes the best answer is not pretending to know.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="qa-flow-map"><svg aria-hidden="true" class="qa-flow-svg" preserveaspectratio="none" viewbox="0 0 1200 300"><path class="draw-path" d="M75 150 C245 75 300 75 400 150 C500 225 590 225 690 150 C790 75 900 75 1125 150"></path></svg><div class="qa-step q1 reveal"><span>1</span><b>Clarify</b><small>Only if needed</small></div><div class="qa-step q2 reveal"><span>2</span><b>Answer</b><small>Lead with it</small></div><div class="qa-step q3 reveal"><span>3</span><b>Support</b><small>Evidence / reason</small></div><div class="qa-step q4 reveal"><span>4</span><b>Bound</b><small>State the limit</small></div><div class="qa-step q5 reveal"><span>5</span><b>Close</b><small>Return control</small></div></div></div><button aria-expanded="false" class="example-trigger" type="button">See a limitation answer</button><div aria-hidden="true" class="example-layer"><button aria-label="Close example" class="example-close" type="button">×</button>
+<div class="example-panel qa-example-panel"><div class="question-card"><small>Committee question</small><b>“Can you conclude that AI caused the improvement?”</b></div><div class="answer-route"><article class="answer-card"><span>Answer</span><b>Not from this design alone.</b></article><article class="answer-card"><span>Evidence</span><b>We observed a larger gain in the guided-AI group.</b></article><article class="answer-card"><span>Boundary</span><b>A causal claim would require stronger control or randomization.</b></article><article class="answer-card"><span>Close</span><b>So the finding is promising, but it is not causal evidence.</b></article></div></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="44" data-layout="unknownQA">
+<div class="meta-row"><div class="tag">Session 3 · Stage</div><div class="num">45 / 48</div></div>
+<h1 class="slide-title">When you do not know, stay credible</h1>
+<ul class="key-points"><li>Do not bluff</li><li>Say what you know</li><li>Name what would be needed</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask participants to rewrite a weak “I don’t know” answer into a credible one.</span></div><div><b>SAY</b><span>A strong answer can say what you know, what you did not test, and what analysis would be needed.</span></div><div><b>NEXT</b><span>Now we practice under pressure.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="scriptCard"><p><b>Credible answer:</b></p><p>“We did not test that directly. Based on these data, I can say…, but a stronger answer would require…”</p></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="45" data-layout="hotseat">
+<div class="meta-row"><div class="tag">Interactive · Stage</div><div class="num">46 / 48</div></div>
+<h1 class="slide-title">Activity: committee hot seat</h1>
+<ul class="key-points"><li>One key result</li><li>Three questions</li><li>Restate, answer, close</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask the room to identify which part of the answer worked.</span></div><div><b>SAY</b><span>Answer with Restate, Answer, Support, Limit, Close.</span></div><div><b>NEXT</b><span>Final transfer brings all three sessions together.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="hotseat"><b>2-minute result</b><span>Method?</span><span>Meaning?</span><span>Limitation?</span></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="46" data-layout="transfer">
+<div class="meta-row"><div class="tag">Transfer</div><div class="num">47 / 48</div></div>
+<h1 class="slide-title">Final transfer: revise one real presentation</h1>
+<ul class="key-points"><li>Revise one story</li><li>Redesign one slide</li><li>Practice one explanation</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Ask participants to name the first slide they will revise.</span></div><div><b>SAY</b><span>The workshop is complete only when the model changes a real presentation.</span></div><div><b>NEXT</b><span>Close with the workshop moral.</span></div></div>
+<div class="visual-shell"><div class="visual-content"><div class="cards3"><article><b>Story</b><p>Five-sentence route</p></article><article><b>Screen</b><p>One claim slide</p></article><article><b>Stage</b><p>One spoken explanation</p></article></div></div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section><section class="slide standard" data-idx="47" data-layout="finalKinetic">
+<div class="meta-row"><div class="tag">Close</div><div class="num">48 / 48</div></div>
+<h1 class="slide-title">Thank you</h1>
+<ul class="key-points"><li>Plan the logic</li><li>Show the evidence</li><li>Guide the room</li></ul>
+<div class="facilitator"><div><b>ASK</b><span>Thank the audience and invite questions.</span></div><div><b>SAY</b><span>Plan the logic. Show the evidence. Guide the room.</span></div><div><b>NEXT</b><span></span></div></div>
+<div class="visual-shell"><div class="visual-content">
+<div class="final-kinetic">
+<div class="final-word-stack">
+<span class="final-word fw-plan">Plan</span>
+<span class="final-word fw-show">Show</span>
+<span class="final-word fw-guide">Guide</span>
+</div>
+<div class="final-thanks"><b>Questions &amp; discussion</b><span>Assist. Prof. Yash Munnalal Gupta</span></div>
+<p>A presentation is a guided route through a question, evidence, and meaning.</p>
+</div>
+</div></div>
+<div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
+</section></div><div class="menu"><button aria-label="Open presentation menu" class="menu-btn" title="Presentation menu (M)">☰</button><div class="menu-panel"><button id="prev">← Previous</button><button id="next">Next →</button><button id="replay">Replay animation</button><button id="coach">Coach notes</button><button id="full">Fullscreen</button><button id="start">Start</button><div class="menu-section"><div class="range-wide-note">Large-text mode is ON. Use <b>All text size</b> for every slide. The deck auto-fits active slides to reduce overlap.</div>
+<label>All text size</label><input class="style-range" id="allTextSize" type="range" min="85" max="170" value="100">
+<label>Title size</label><input class="style-range" id="titleSize" type="range" min="90" max="220" value="150">
+<label>Bullet size</label><input class="style-range" id="bulletSize" type="range" min="90" max="230" value="150">
+<label>Diagram text</label><input class="style-range" id="visualTextSize" type="range" min="90" max="230" value="135">
+<label>Diagram size</label><input class="style-range" id="visualSize" type="range" min="70" max="135" value="100">
+<label>Spacing</label><input class="style-range" id="spacing" type="range" min="70" max="165" value="112">
+<button id="resetStyle">Reset sizes</button></div><div class="menu-section"><button data-jump="0">01 · Crafting Your Academic Story</button><button data-jump="1">02 · What survives after ten seconds?</button><button data-jump="2">03 · Story · Screen · Stage</button><button data-jump="3">04 · Predict. See. Try. Retrieve.</button><button data-jump="4">05 · Before slides: name the kind of talk</button><button data-jump="5">06 · Section names are not the story</button><button data-jump="6">07 · The memory map stays simple</button><button data-jump="7">08 · Introduction is a narrowing funnel</button><button data-jump="8">09 · WHY has four moves</button><button data-jump="9">10 · HOW: one design sentence plus three anchors</button><button data-jump="10">11 · WHAT, SO WHAT, NOW WHAT need different certainty</button><button data-jump="11">12 · One study, three academic routes</button><button data-jump="12">13 · Proposal route: make the plan believable</button><button data-jump="13">14 · Defence route: make the decisions defensible</button><button data-jump="14">15 · Conference route: make one result travel</button><button data-jump="15">16 · Build the opening in three passes</button><button data-jump="16">17 · Activity: build the research route</button><button data-jump="17">18 · Activity: write your 60-second research story</button><button data-jump="18">19 · Close your notes: rebuild the route</button><button data-jump="19">20 · Slides direct attention</button><button data-jump="20">21 · Concept first, formatting second</button><button data-jump="21">22 · Choose the visual by the job it must do</button><button data-jump="22">23 · Methods often need a flowchart</button><button data-jump="23">24 · Example slide: method as a flowchart</button><button data-jump="24">25 · Literature review needs a map, not a wall of citations</button><button data-jump="25">26 · Example slide: literature review as a timeline</button><button data-jump="26">27 · Exact value or pattern?</button><button data-jump="27">28 · Example slide: exact values need a table</button><button data-jump="28">29 · Example slide: patterns need a chart</button><button data-jump="29">30 · Evidence slides need claim titles</button><button data-jump="30">31 · Example slide: weak vs strong result slide</button><button data-jump="31">32 · Visual hierarchy is kindness</button><button data-jump="32">33 · Animate logic, not decoration</button><button data-jump="33">34 · Activity: choose the right visual form</button><button data-jump="34">35 · Activity: assemble a one-claim slide</button><button data-jump="35">36 · Close the examples: rebuild the design rule</button><button data-jump="36">37 · Stage guides attention through time</button><button data-jump="37">38 · Calm is observable</button><button data-jump="38">39 · Road signs make logic audible</button><button data-jump="39">40 · Explain every chart in three moves</button><button data-jump="40">41 · Say the pattern before the digits</button><button data-jump="41">42 · A five-beat figure routine</button><button data-jump="42">43 · Close with one moral</button><button data-jump="43">44 · Q&amp;A: answer first, then support</button><button data-jump="44">45 · When you do not know, stay credible</button><button data-jump="45">46 · Activity: committee hot seat</button><button data-jump="46">47 · Final transfer: revise one real presentation</button><button data-jump="47">48 · Thank you</button></div></div></div><div class="remote-hint" aria-live="polite">Presenter ready</div><div class="progress"><span></span></div><script>
+const slides=[...document.querySelectorAll('.slide')];let idx=0;let activeTL=null;let gsapReady=false;
+const progress=document.querySelector('.progress span');
+function setVar(name,val){document.documentElement.style.setProperty(name,val)}
+function prepPath(path){if(!path)return 0;const len=path.getTotalLength();path.style.strokeDasharray=len;path.style.strokeDashoffset=len;return len}
+function positionDot(dot,path,p){if(!dot||!path)return;const len=path.getTotalLength();const pt=path.getPointAtLength(len*p);dot.style.transform=`translate(${pt.x-7.5}px,${pt.y-7.5}px)`}
+function fallbackAnimate(slide){slide.querySelectorAll('.draw-path').forEach(p=>p.style.strokeDashoffset=0);slide.querySelectorAll('.moving-dot').forEach(d=>d.style.display='none');slide.animate([{opacity:.35},{opacity:1}],{duration:280,easing:'ease-out'});slide.querySelectorAll('.reveal,.step').forEach((el,i)=>el.animate([{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'none'}],{duration:420,delay:80+i*65,easing:'cubic-bezier(.2,.8,.2,1)',fill:'both'}))}
+function animateSlide(slide){
+ if(activeTL&&activeTL.kill)activeTL.kill();
+ const paths=[...slide.querySelectorAll('.draw-path')];paths.forEach(prepPath);
+ const dots=[...slide.querySelectorAll('.moving-dot')];dots.forEach(d=>{const p=slide.querySelector('#'+d.dataset.path);positionDot(d,p,0);});
+ if(!window.gsap){fallbackAnimate(slide);return;}
+ gsapReady=true;const tl=gsap.timeline({defaults:{ease:'power3.out'}});activeTL=tl;
+ tl.fromTo(slide.querySelector('.slide-title'),{autoAlpha:0,y:22},{autoAlpha:1,y:0,duration:.55})
+   .fromTo(slide.querySelectorAll('.key-points li'),{autoAlpha:0,y:12},{autoAlpha:1,y:0,duration:.38,stagger:.055},'-=.28')
+   .fromTo(slide.querySelector('.visual-shell'),{autoAlpha:0,y:18,scale:.992},{autoAlpha:1,y:0,scale:1,duration:.5},'-=.25');
+ const reveals=slide.querySelectorAll('.reveal,.step');if(reveals.length)tl.fromTo(reveals,{autoAlpha:0,y:16,scale:.97},{autoAlpha:1,y:0,scale:1,duration:.44,stagger:.07},'-=.22');
+ const staggerNodes=slide.querySelectorAll('.sectionmap>div,.five>span,.pillars>div,.cards3 article,.steps4>div,.certainty>div,.eyePath>div,.timePath>div,.threeMoves>div,.closingMoves>span,.qa>div,.decision>div,.lit>div,.model b');if(staggerNodes.length&&!reveals.length)tl.fromTo(staggerNodes,{autoAlpha:0,y:12,scale:.96},{autoAlpha:1,y:0,scale:1,duration:.4,stagger:.06},'-=.24');
+ const modelLines=slide.querySelectorAll('.model span');if(modelLines.length)tl.fromTo(modelLines,{scaleX:0,transformOrigin:'left center'},{scaleX:1,duration:.45,stagger:.08,ease:'power2.inOut'},'-=.22');
+ paths.forEach((p,pi)=>{const len=p.getTotalLength();tl.to(p,{strokeDashoffset:0,duration:.8,ease:'power2.inOut'},pi?'<.12':'-=.25');});
+ dots.forEach((dot,di)=>{const path=slide.querySelector('#'+dot.dataset.path);if(!path)return;const state={p:0};tl.to(state,{p:1,duration:2.0,ease:'power1.inOut',onUpdate:()=>positionDot(dot,path,state.p)},di?'<':'-=.35');});
+ if(slide.dataset.layout==='conferenceRoute'){tl.fromTo('.slide.active .pulse-ring',{scale:.25,autoAlpha:0},{scale:1.7,autoAlpha:0,duration:1.4,repeat:1,ease:'power2.out'},'-=.3')}
+ if(slide.dataset.layout==='figureRoutine'){const ns=slide.querySelectorAll('.routine-node');ns.forEach((n,i)=>tl.to(n,{scale:1.08,duration:.16,ease:'power2.out'},i?'<+.32':'-=1.8').to(n,{scale:1,duration:.22},'<+.12'));}
+ if(slide.dataset.layout==='chartEx'){tl.fromTo(slide.querySelectorAll('.hbars span'),{scaleX:0,transformOrigin:'left center'},{scaleX:1,duration:.75,stagger:.14,ease:'power3.out'},'-=.5')}
+ if(slide.dataset.layout==='learningOrbit'){
+   tl.fromTo(slide.querySelector('.orbit-core'),{scale:.82,autoAlpha:0},{scale:1,autoAlpha:1,duration:.55,ease:'back.out(1.4)'},'-=.7');
+   tl.fromTo(slide.querySelector('.orbit-spark'),{autoAlpha:0,scale:.4},{autoAlpha:1,scale:1,duration:.25},'-=.15').to(slide.querySelector('.orbit-spark'),{rotation:360,duration:1.8,ease:'none',transformOrigin:'0 165px'}).to(slide.querySelector('.orbit-spark'),{autoAlpha:0,duration:.22},'<+.1');
+ }
+ if(slide.dataset.layout==='conceptDecision'){
+   tl.fromTo(slide.querySelector('.decision-rule'),{autoAlpha:0,y:10},{autoAlpha:1,y:0,duration:.4},'-=.15');
+ }
+ if(slide.dataset.layout==='claimCompare'){
+   tl.fromTo(slide.querySelectorAll('.bar-fill'),{scaleX:0,transformOrigin:'left center'},{scaleX:1,duration:.72,stagger:.10,ease:'power3.out'},'-=.45');
+   tl.fromTo(slide.querySelector('.focus-bar'),{filter:'saturate(.4)'},{filter:'saturate(1)',duration:.5},'-=.2');
+ }
+ if(slide.dataset.layout==='animationFlow'){
+   const ns=slide.querySelectorAll('.logic-node');ns.forEach((n,i)=>tl.to(n,{scale:1.055,duration:.16,ease:'power2.out'},i?'<+.30':'-=1.35').to(n,{scale:1,duration:.22},'<+.12'));
+   tl.fromTo(slide.querySelector('.logic-rule'),{autoAlpha:0,y:8},{autoAlpha:1,y:0,duration:.35},'-=.15');
+ }
+ if(slide.dataset.layout==='roadSignMap'){tl.fromTo(slide.querySelectorAll('.road-card'),{autoAlpha:0,y:18},{autoAlpha:1,y:0,duration:.42,stagger:.10},'-=.28');}
+ if(slide.dataset.layout==='qaFlow'){const qs=slide.querySelectorAll('.qa-step');qs.forEach((n,i)=>tl.to(n,{scale:1.055,duration:.15,ease:'power2.out'},i?'<+.28':'-=1.25').to(n,{scale:1,duration:.2},'<+.10'));}
+}
+
+function resetFit(slide){
+  if(!slide) return;
+  slide.style.setProperty('--fitTitle',1);
+  slide.style.setProperty('--fitBullet',1);
+  slide.style.setProperty('--fitVisualText',1);
+  slide.style.setProperty('--fitVisual',1);
+}
+function hasOverflow(el){
+  if(!el) return false;
+  return el.scrollHeight > el.clientHeight + 2 || el.scrollWidth > el.clientWidth + 2;
+}
+function safeFitActiveSlide(){
+  const slide = slides[idx];
+  if(!slide) return;
+  resetFit(slide);
+  const title = slide.querySelector('.slide-title');
+  const points = slide.querySelector('.key-points');
+  const shell = slide.querySelector('.visual-shell');
+  const vcontent = slide.querySelector('.visual-content');
+
+  // Let browser settle first.
+  const minTitle=.62, minBullet=.62, minVisualText=.62, minVisual=.76;
+  let t=1,b=1,vt=1,v=1;
+
+  // Fit title and bullets first.
+  for(let i=0;i<12;i++){
+    if(hasOverflow(slide) || hasOverflow(title)){
+      t=Math.max(minTitle,t-.045);
+      slide.style.setProperty('--fitTitle',t);
+    }
+    if(hasOverflow(slide) || hasOverflow(points)){
+      b=Math.max(minBullet,b-.045);
+      slide.style.setProperty('--fitBullet',b);
+    }
+    if(!(hasOverflow(slide)||hasOverflow(title)||hasOverflow(points))) break;
+  }
+
+  // Fit visual text before shrinking entire visual.
+  for(let i=0;i<18;i++){
+    if(hasOverflow(slide) || hasOverflow(shell) || hasOverflow(vcontent)){
+      vt=Math.max(minVisualText,vt-.04);
+      slide.style.setProperty('--fitVisualText',vt);
+    } else break;
+  }
+  for(let i=0;i<14;i++){
+    if(hasOverflow(slide) || hasOverflow(shell) || hasOverflow(vcontent)){
+      v=Math.max(minVisual,v-.025);
+      slide.style.setProperty('--fitVisual',v);
+    } else break;
+  }
+}
+window.safeFitActiveSlide=safeFitActiveSlide;
+window.addEventListener('resize',()=>requestAnimationFrame(safeFitActiveSlide));
+
+function show(n){idx=Math.max(0,Math.min(slides.length-1,n));window.__slideIndex=idx;slides.forEach((s,i)=>s.classList.toggle('active',i===idx));progress.style.width=((idx+1)/slides.length*100)+'%';requestAnimationFrame(()=>{safeFitActiveSlide();animateSlide(slides[idx]);setTimeout(safeFitActiveSlide,260)});document.querySelector('.menu-panel')?.classList.remove('open')}
+window.show=show;
+function next(){show(idx+1)}function prev(){show(idx-1)}
+function isTypingTarget(target){
+ const el = target instanceof Element ? target : null;
+ return !!(el && (el.closest('input, textarea, select, [contenteditable="true"]')));
+}
+function showRemoteHint(msg){
+ const h=document.querySelector('.remote-hint'); if(!h) return;
+ h.textContent=msg; h.classList.add('show');
+ clearTimeout(window.__remoteHintTimer);
+ window.__remoteHintTimer=setTimeout(()=>h.classList.remove('show'),900);
+}
+document.addEventListener('keydown',e=>{
+ if(isTypingTarget(e.target)){
+   if(e.key==='Escape'){e.target.blur(); e.preventDefault(); showRemoteHint('Typing ended');}
+   return;
+ }
+ const key=e.key||'', code=e.code||'', kc=e.keyCode||e.which||0;
+ const k=key.toLowerCase();
+ const forwardKeys = key==='ArrowRight'||key==='PageDown'||key===' '||code==='Space'||kc===39||kc===34||kc===32||k==='n';
+ const backKeys = key==='ArrowLeft'||key==='PageUp'||kc===37||kc===33||k==='p';
+ if(forwardKeys){e.preventDefault();next();showRemoteHint('Next slide');}
+ else if(backKeys){e.preventDefault();prev();showRemoteHint('Previous slide');}
+ else if(key==='Home'||kc===36){e.preventDefault();show(0);showRemoteHint('First slide');}
+ else if(key==='End'||kc===35){e.preventDefault();show(slides.length-1);showRemoteHint('Last slide');}
+ else if(k==='r'){e.preventDefault();animateSlide(slides[idx]);showRemoteHint('Replay animation');}
+ else if(k==='c'){e.preventDefault();document.body.classList.toggle('showCoach');showRemoteHint('Presenter notes');}
+ else if(k==='f'){e.preventDefault();document.documentElement.requestFullscreen?.();document.body.classList.add('presenting');}
+ else if(k==='m'){e.preventDefault();document.querySelector('.menu-panel')?.classList.toggle('open');}
+ else if(key==='Escape'){document.querySelector('.menu-panel')?.classList.remove('open');document.body.classList.remove('presenting');}
+});
+const mb=document.querySelector('.menu-btn'),mp=document.querySelector('.menu-panel');mb.onclick=()=>mp.classList.toggle('open');document.querySelector('#prev').onclick=prev;document.querySelector('#next').onclick=next;document.querySelector('#start').onclick=()=>show(0);document.querySelector('#replay').onclick=()=>animateSlide(slides[idx]);document.querySelector('#coach').onclick=()=>document.body.classList.toggle('showCoach');document.querySelector('#full').onclick=()=>document.documentElement.requestFullscreen?.();document.querySelector('#resetStyle').onclick=()=>{setVar('--globalTextScale',1);setVar('--titleScale',1.5);setVar('--bulletScale',1.5);setVar('--visualTextScale',1.35);setVar('--visualScale',1);setVar('--spaceScale',1.12);document.querySelector('#allTextSize').value=100;document.querySelector('#titleSize').value=150;document.querySelector('#bulletSize').value=150;document.querySelector('#visualTextSize').value=135;document.querySelector('#visualSize').value=100;document.querySelector('#spacing').value=112;requestAnimationFrame(()=>safeFitActiveSlide())};
+[['allTextSize','--globalTextScale'],['titleSize','--titleScale'],['bulletSize','--bulletScale'],['visualTextSize','--visualTextScale'],['visualSize','--visualScale'],['spacing','--spaceScale']].forEach(([id,v])=>{const el=document.querySelector('#'+id);if(el)el.oninput=()=>{setVar(v,el.value/100);requestAnimationFrame(()=>safeFitActiveSlide())}});document.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>show(+b.dataset.jump));
+document.querySelectorAll('[data-route-jump]').forEach(b=>b.onclick=()=>{const target=b.dataset.routeJump;const s=slides.find(x=>x.dataset.layout===target+'Route');if(s)show(+s.dataset.idx)});
+let dragged=null;
+function setFeedback(scope,msg,kind=''){
+ const fb=scope.querySelector('.activity-feedback'); if(!fb)return;
+ fb.textContent=msg; fb.classList.remove('good','bad'); if(kind)fb.classList.add(kind);
+}
+function animateWrong(el){if(window.gsap){gsap.fromTo(el,{x:0},{x:7,duration:.07,repeat:5,yoyo:true,ease:'power1.inOut',onComplete:()=>gsap.set(el,{x:0})})}else{el.animate([{transform:'translateX(0)'},{transform:'translateX(7px)'},{transform:'translateX(-7px)'},{transform:'translateX(0)'}],{duration:320})}}
+document.addEventListener('dragstart',e=>{if(e.target.matches('button[draggable="true"]')){dragged=e.target;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',dragged.dataset.card||dragged.textContent.trim())}});
+document.addEventListener('dragover',e=>{const z=e.target.closest('[data-dropzone]');if(z){e.preventDefault();z.closest('.zone')?.classList.add('over')}});
+document.addEventListener('dragleave',e=>e.target.closest('.zone')?.classList.remove('over'));
+document.addEventListener('drop',e=>{
+ const z=e.target.closest('[data-dropzone]');if(!z||!dragged)return;e.preventDefault();
+ const slide=e.target.closest('.slide'); const zone=z.closest('.zone'); zone?.classList.remove('over');
+ if(slide?.querySelector('.graded-activity') && dragged.dataset.answer){
+   const expected=dragged.dataset.answer, actual=zone?.dataset.zone;
+   if(expected===actual){
+     z.innerHTML='';z.appendChild(dragged);dragged.draggable=false;dragged.classList.add('locked','placed-card');zone.classList.add('correct-zone');zone.classList.remove('wrong-zone');
+     const left=slide.querySelectorAll('.graded-activity .toolbox button[draggable="true"]').length;
+     setFeedback(slide,left===0?'All correct. Now explain the rule without looking.':`Correct — ${dragged.dataset.card} → ${actual}.`,'good');
+     if(window.gsap)gsap.fromTo(dragged,{scale:.72,autoAlpha:.3},{scale:1,autoAlpha:1,duration:.35,ease:'back.out(1.6)'});
+   }else{
+     zone?.classList.add('wrong-zone');setTimeout(()=>zone?.classList.remove('wrong-zone'),650);
+     setFeedback(slide,`Not quite — ${dragged.dataset.card} belongs with ${expected}. Try again.`,'bad');animateWrong(zone||dragged);
+   }
+   dragged=null;return;
+ }
+ if(slide?.querySelector('.checkable-builder')){
+   if(z.classList.contains('canvasDrop')){z.appendChild(dragged);dragged.draggable=false;dragged.classList.add('placed-card');setFeedback(slide,'Good. Add or remove pieces, then check the slide.');if(window.gsap)gsap.from(dragged,{scale:.75,autoAlpha:0,duration:.3,ease:'back.out(1.6)'})}
+   dragged=null;return;
+ }
+ const c=dragged.cloneNode(true);c.draggable=false;c.style.margin='4px';z.appendChild(c);if(window.gsap)gsap.from(c,{scale:.7,autoAlpha:0,duration:.35,ease:'back.out(1.7)'});dragged=null;
+});
+document.addEventListener('click',e=>{
+ const reset=e.target.closest('.reset-activity'); if(reset){const slide=reset.closest('.slide'),game=slide.querySelector('.graded-activity'),tb=game.querySelector('.toolbox');game.querySelectorAll('.placed-card').forEach(card=>{card.classList.remove('locked','placed-card');card.draggable=true;tb.appendChild(card)});game.querySelectorAll('.zone').forEach(z=>{z.classList.remove('correct-zone','wrong-zone');z.querySelector('[data-dropzone]').innerHTML=''});setFeedback(slide,'Drag a card to a destination.');return}
+ const placed=e.target.closest('.checkable-builder .canvasDrop .placed-card'); if(placed){const slide=placed.closest('.slide'),tb=slide.querySelector('.checkable-builder .toolbox');placed.draggable=true;placed.classList.remove('placed-card');tb.appendChild(placed);setFeedback(slide,'Item removed. Check again when ready.');return}
+ const check=e.target.closest('.check-slide'); if(check){const slide=check.closest('.slide'),roles=[...slide.querySelectorAll('.canvasDrop [data-role]')].map(x=>x.dataset.role);const missing=['claim','evidence','accent'].filter(x=>!roles.includes(x));const extra=roles.includes('extra');if(!missing.length&&!extra){setFeedback(slide,'Correct — one claim, one evidence source, one focal accent.','good')}else{let tips=[];if(missing.length)tips.push('add '+missing.join(', '));if(extra)tips.push('remove extra detail');setFeedback(slide,'Not yet — '+tips.join('; ')+'.','bad')}return}
+});
+document.addEventListener('click',e=>{
+ const trig=e.target.closest('.example-trigger');if(trig){const shell=trig.closest('.visual-shell'),layer=shell.querySelector('.example-layer');layer.classList.add('open');layer.setAttribute('aria-hidden','false');trig.setAttribute('aria-expanded','true');if(window.gsap)gsap.fromTo(layer,{autoAlpha:0,scale:.985},{autoAlpha:1,scale:1,duration:.28,ease:'power2.out'});return}
+ const close=e.target.closest('.example-close');if(close){const layer=close.closest('.example-layer'),trig=layer.parentElement.querySelector('.example-trigger');if(window.gsap){gsap.to(layer,{autoAlpha:0,scale:.99,duration:.2,ease:'power2.in',onComplete:()=>{layer.classList.remove('open');layer.style.opacity='';layer.style.visibility='';layer.style.transform='';layer.setAttribute('aria-hidden','true')}})}else{layer.classList.remove('open');layer.setAttribute('aria-hidden','true')}trig?.setAttribute('aria-expanded','false');return}
+});
+window.__deckStarted=false;window.__startDeck=()=>{if(window.__deckStarted)return;window.__deckStarted=true;show(0)};if(document.readyState==='complete')setTimeout(window.__startDeck,0);else window.addEventListener('load',window.__startDeck,{once:true});
+</script><script>
+(function(){
+  function loadScript(src, ok, fail){
+    const s=document.createElement('script'); s.src=src; s.async=true;
+    s.onload=ok; s.onerror=fail; document.head.appendChild(s);
+  }
+  // Presenter Edition: local GSAP first for offline use; CDN fallback for GitHub Pages.
+  loadScript('js/gsap.min.js',
+    ()=>{window.gsapReady=true; window.__gsapSource='local';},
+    ()=>loadScript('https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js',
+      ()=>{window.gsapReady=true; window.__gsapSource='cdn';},
+      ()=>{window.gsapReady=false; window.__gsapSource='fallback';}
+    )
+  );
+})();
+</script>
+<script>
+(function(){
+  const oldAnimate = window.animateSlide;
+  function q(slide, sel){return slide.querySelector(sel)}
+  function qa(slide, sel){return Array.from(slide.querySelectorAll(sel))}
+  function prepPath(path){ if(!path) return; try{ const len=path.getTotalLength(); path.style.strokeDasharray=len; path.style.strokeDashoffset=len; }catch(e){} }
+  function drawPath(path, dur=.9, delay=0){ if(!path) return; if(window.gsap){ gsap.to(path,{strokeDashoffset:0,duration:dur,delay,ease:'power2.inOut'}); } else { path.animate([{strokeDashoffset:path.style.strokeDasharray},{strokeDashoffset:0}],{duration:dur*1000,delay:delay*1000,fill:'forwards',easing:'ease-in-out'}); } }
+  window.animateSlide = function(slide){
+    if(!slide) return;
+    const layout=slide.dataset.layout;
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce){
+      if(window.activeTL&&window.activeTL.kill)window.activeTL.kill();
+      slide.querySelectorAll('.draw-path,.route-draw-line,.method-draw').forEach(p=>{p.style.strokeDasharray='none';p.style.strokeDashoffset='0'});
+      slide.querySelectorAll('.kinetic-word,.kinetic-word span,.kinetic-moral,.loop-center,.loop-step,.route-caption,.route-card-premium,.method-node,.method-rule,.routine-steps-premium>div,.figure-bar span,.final-word,.final-thanks,.final-kinetic p,.visual-shell,.slide-title,.key-points li,.reveal,.step').forEach(e=>{e.style.opacity='1';e.style.visibility='visible';e.style.filter='none';e.style.transform='';});
+      const ghost=q(slide,'.kinetic-ghost');if(ghost){ghost.style.opacity='0';ghost.style.visibility='hidden'}
+      const lens=q(slide,'.attention-lens');if(lens){lens.style.opacity='0'}
+      return;
+    }
+    if(!window.gsap && slide.getAnimations){slide.getAnimations({subtree:true}).forEach(a=>{try{a.cancel()}catch(e){}});}
+    if(oldAnimate) oldAnimate(slide);
+    const g=window.gsap;
+    if(layout==='heroKinetic'){
+      const ghost=q(slide,'.kinetic-ghost'), words=qa(slide,'.kinetic-word'), moral=q(slide,'.kinetic-moral');
+      if(!g){
+        words.forEach((w,i)=>{
+          const b=w.querySelector('b'), rect=b.getBoundingClientRect(), box=slide.querySelector('.hero-kinetic-box').getBoundingClientRect();
+          const dx=(box.left+box.width/2)-(rect.left+rect.width/2), dy=(box.top+box.height/2)-(rect.top+rect.height/2);
+          w.style.opacity='0'; w.querySelector('span').style.opacity='0';
+          b.animate([{transform:`translate(${dx}px,${dy}px) scale(1.42)`,filter:'blur(12px)',opacity:0},{transform:`translate(${dx}px,${dy}px) scale(1.08)`,filter:'blur(0)',opacity:1,offset:.35},{transform:'translate(0,0) scale(1)',filter:'blur(0)',opacity:1}],{duration:980,delay:120+i*520,fill:'both',easing:'cubic-bezier(.16,1,.3,1)'});
+          w.animate([{opacity:0},{opacity:0,offset:.25},{opacity:1}],{duration:760,delay:310+i*520,fill:'both',easing:'cubic-bezier(.16,1,.3,1)'});
+          w.querySelector('span').animate([{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'translateY(0)'}],{duration:420,delay:700+i*520,fill:'both',easing:'cubic-bezier(.16,1,.3,1)'});
+        });
+        moral?.animate([{opacity:0,transform:'translate(-50%,10px)'},{opacity:1,transform:'translate(-50%,0)'}],{duration:600,delay:2050,fill:'both',easing:'cubic-bezier(.16,1,.3,1)'}); return;
+      }
+      g.killTweensOf([ghost,moral,...words, ...qa(slide,'.kinetic-word span'), ...qa(slide,'.kinetic-word b')]);
+      g.set(words,{autoAlpha:0,y:28,scale:.93,filter:'blur(10px)'}); g.set(qa(slide,'.kinetic-word span'),{autoAlpha:0,y:14}); g.set(moral,{autoAlpha:0,y:12}); g.set(ghost,{autoAlpha:0,scale:.8,filter:'blur(14px)',x:0,y:0});
+      const colors=['#8278aa','#4f879f','#628f72'], labels=['Story','Screen','Stage'];
+      const tl=g.timeline({defaults:{ease:'power4.out'}});
+      words.forEach((w,i)=>{
+        const b=w.querySelector('b'), rect=b.getBoundingClientRect(), gr=ghost.getBoundingClientRect();
+        const dx=(rect.left+rect.width/2)-(gr.left+gr.width/2), dy=(rect.top+rect.height/2)-(gr.top+gr.height/2);
+        tl.call(()=>{ghost.textContent=labels[i]; ghost.style.color=colors[i];})
+          .set(ghost,{autoAlpha:0,scale:.78,x:0,y:0,filter:'blur(16px)'})
+          .to(ghost,{autoAlpha:1,scale:1.04,filter:'blur(0px)',duration:.55,ease:'expo.out'})
+          .to(ghost,{x:dx,y:dy,scale:.58,autoAlpha:.10,filter:'blur(6px)',duration:.62,ease:'power3.inOut'})
+          .to(w,{autoAlpha:1,y:0,scale:1,filter:'blur(0px)',duration:.58,ease:'expo.out'},'<+.08')
+          .to(w.querySelector('span'),{autoAlpha:1,y:0,duration:.34,ease:'power3.out'},'<+.18')
+          .set(ghost,{autoAlpha:0,x:0,y:0});
+      });
+      tl.to(moral,{autoAlpha:1,y:0,duration:.55,ease:'power3.out'},'-=.1')
+        .to(words,{y:-3,duration:.65,stagger:.07,ease:'sine.inOut'},'-=.15')
+        .to(words,{y:0,duration:.65,stagger:.07,ease:'sine.inOut'},'-=.45');
+    }
+    if(layout==='learningLoopPremium'){
+      const steps=qa(slide,'.loop-step'), center=q(slide,'.loop-center');
+      if(g){ g.killTweensOf([center,...steps]); g.fromTo(center,{autoAlpha:0,scale:.88,filter:'blur(6px)'},{autoAlpha:1,scale:1,filter:'blur(0px)',duration:.55,ease:'back.out(1.3)'}); g.fromTo(steps,{autoAlpha:0,scale:.88,y:24,filter:'blur(6px)'},{autoAlpha:1,scale:1,y:0,filter:'blur(0px)',duration:.62,stagger:.13,ease:'back.out(1.15)',delay:.22}); steps.forEach((el,i)=>g.to(el,{scale:1.045,duration:.16,delay:.95+i*.22,ease:'power2.out',yoyo:true,repeat:1})); }
+    }
+    if(layout==='proposalRoutePremium'||layout==='defenceRoutePremium'){
+      const p=q(slide,'.route-draw-line'), cards=qa(slide,'.route-card-premium'), cap=q(slide,'.route-caption'); prepPath(p); if(g){g.set(p,{strokeDashoffset:p.style.strokeDasharray}); g.fromTo(cap,{autoAlpha:0,y:-10},{autoAlpha:1,y:0,duration:.35,ease:'power2.out'}); drawPath(p,.9,.12); g.fromTo(cards,{autoAlpha:0,y:24,scale:.9,filter:'blur(5px)'},{autoAlpha:1,y:0,scale:1,filter:'blur(0px)',duration:.55,stagger:.13,ease:'back.out(1.2)',delay:.38}); cards.forEach((c,i)=>g.to(c,{scale:1.055,duration:.16,delay:1.12+i*.18,yoyo:true,repeat:1,ease:'power2.out'})); }
+    }
+    if(layout==='methodFlowPremium'){
+      const p=q(slide,'.method-draw'), nodes=qa(slide,'.method-node'), rule=q(slide,'.method-rule'); prepPath(p); if(g){g.set(p,{strokeDashoffset:p.style.strokeDasharray}); drawPath(p,.95,.12); g.fromTo(nodes,{autoAlpha:0,y:22,scale:.9,filter:'blur(5px)'},{autoAlpha:1,y:0,scale:1,filter:'blur(0px)',duration:.52,stagger:.12,ease:'back.out(1.15)',delay:.35}); g.fromTo(rule,{autoAlpha:0,y:12},{autoAlpha:1,y:0,duration:.42,ease:'power2.out',delay:1.12}); }
+    }
+    if(layout==='figureRoutinePremium'){
+      const bars=qa(slide,'.figure-bar span'), steps=qa(slide,'.routine-steps-premium>div');
+      const standard=q(slide,'.figure-bar.standard span'), guided=q(slide,'.figure-bar.guided span'), heading=q(slide,'.mini-chart-stage h3');
+      if(g){
+        if(slide.__figureTL){ try{slide.__figureTL.kill()}catch(e){} }
+        g.killTweensOf([...bars,...steps,standard,guided,heading]);
+        g.set(bars,{scaleX:0,transformOrigin:'left center',boxShadow:'none'});
+        g.set(steps,{autoAlpha:0,x:22,scale:1,filter:'blur(4px)'});
+        g.set(heading,{color:'#183033'});
+        const tl=g.timeline({defaults:{ease:'power3.out'}});
+        slide.__figureTL=tl;
+        tl.to(bars,{scaleX:1,duration:.72,stagger:.14})
+          .to(steps,{autoAlpha:1,x:0,filter:'blur(0px)',duration:.42,stagger:.10},'-=.38')
+          // 1. Name the comparison: briefly hold both bars together.
+          .to(steps[0],{scale:1.035,duration:.16,ease:'power2.out'})
+          .to([standard,guided],{scaleY:1.08,duration:.18,ease:'power2.out'},'<')
+          .to([standard,guided],{scaleY:1,duration:.24,ease:'power2.inOut'})
+          .to(steps[0],{scale:1,duration:.20},'<')
+          // 2. Point: emphasize the evidence itself, not an overlay.
+          .to(steps[1],{scale:1.035,duration:.16})
+          .to(guided,{scaleY:1.10,boxShadow:'0 8px 22px rgba(216,122,81,.24)',duration:.22},'<')
+          .to(guided,{scaleY:1,boxShadow:'none',duration:.32})
+          .to(steps[1],{scale:1,duration:.20},'<')
+          // 3. Pause: intentionally hold the frame still.
+          .to(steps[2],{scale:1.035,duration:.16})
+          .to({}, {duration:.48})
+          .to(steps[2],{scale:1,duration:.20})
+          // 4. Interpret: return focus to the claim.
+          .to(steps[3],{scale:1.035,duration:.16})
+          .to(heading,{color:'#D87A51',duration:.24},'<')
+          .to(heading,{color:'#183033',duration:.34})
+          .to(steps[3],{scale:1,duration:.20},'<')
+          // 5. Return: settle the visual and hand attention back to the audience.
+          .to(steps[4],{scale:1.035,duration:.16})
+          .to(steps[4],{scale:1,duration:.24});
+      }
+    }
+    if(layout==='finalKinetic'){
+      const words=qa(slide,'.final-word'), thanks=q(slide,'.final-thanks'), moral=q(slide,'.final-kinetic p');
+      if(g){ g.killTweensOf([...words,thanks,moral]); g.fromTo(words,{autoAlpha:0,y:42,scale:.82,filter:'blur(12px)'},{autoAlpha:1,y:0,scale:1,filter:'blur(0px)',duration:.75,stagger:.16,ease:'expo.out'}); g.fromTo(thanks,{autoAlpha:0,y:18},{autoAlpha:1,y:0,duration:.52,ease:'power3.out',delay:.75}); g.fromTo(moral,{autoAlpha:0,y:14},{autoAlpha:1,y:0,duration:.52,ease:'power3.out',delay:1.0}); g.to(words,{y:-4,duration:.65,stagger:.08,ease:'sine.inOut',delay:1.25}).to(words,{y:0,duration:.65,stagger:.08,ease:'sine.inOut'},'<+.18'); }
+    }
+  };
+})();
+</script>
+</body></html>
