@@ -974,7 +974,7 @@ body.presenting .remote-hint{display:none}
 </div>
 </div></div>
 <div class="slide-foot">Crafting Your Academic Story · Story · Screen · Stage</div>
-</section></div><div class="menu"><button aria-label="Open presentation menu" class="menu-btn" title="Presentation menu (M)">☰</button><div class="menu-panel"><button id="prev">← Previous</button><button id="next">Next →</button><button id="replay">Replay animation</button><button id="coach">Coach notes</button><button id="full">Fullscreen</button><button id="start">Start</button><div class="menu-section"><div class="range-wide-note">Universal font control is ON. Sizes stay the same on every slide; layouts reflow instead of secretly shrinking text.</div>
+</section></div><div class="menu"><button aria-label="Open presentation menu" class="menu-btn" title="Presentation menu (M)">☰</button><div class="menu-panel"><button id="prev">← Previous</button><button id="next">Next →</button><button id="replay">Replay animation</button><button id="coach">Coach notes</button><button id="full">Fullscreen</button><button id="start">Start</button><div class="menu-section"><div class="range-wide-note">Universal font control is ON. Sizes stay the same on every slide; layouts reflow instead of secretly shrinking text. Quick keys: + / = increase all text, - decreases, 0 resets all text to 100%.</div>
 <label>All text size</label><input class="style-range" id="allTextSize" type="range" min="85" max="145" value="100">
 <label>Title size</label><input class="style-range" id="titleSize" type="range" min="90" max="175" value="150">
 <label>Bullet size</label><input class="style-range" id="bulletSize" type="range" min="90" max="175" value="150">
@@ -1061,6 +1061,19 @@ function showRemoteHint(msg){
  clearTimeout(window.__remoteHintTimer);
  window.__remoteHintTimer=setTimeout(()=>h.classList.remove('show'),900);
 }
+function changeGlobalTextSize(delta){
+ const el=document.querySelector('#allTextSize');
+ if(!el) return;
+ const current=Number(el.value)||DEFAULT_SIZES.allTextSize;
+ applySizeControl('allTextSize',current+delta,true);
+ refreshUniversalLayout();
+ showRemoteHint('All text: '+el.value+'%');
+}
+function resetGlobalTextSize(){
+ applySizeControl('allTextSize',DEFAULT_SIZES.allTextSize,true);
+ refreshUniversalLayout();
+ showRemoteHint('All text: 100%');
+}
 document.addEventListener('keydown',e=>{
  if(isTypingTarget(e.target)){
    if(e.key==='Escape'){e.target.blur(); e.preventDefault(); showRemoteHint('Typing ended');}
@@ -1070,7 +1083,13 @@ document.addEventListener('keydown',e=>{
  const k=key.toLowerCase();
  const forwardKeys = key==='ArrowRight'||key==='PageDown'||key===' '||code==='Space'||kc===39||kc===34||kc===32||k==='n';
  const backKeys = key==='ArrowLeft'||key==='PageUp'||kc===37||kc===33||k==='p';
- if(forwardKeys){e.preventDefault();next();showRemoteHint('Next slide');}
+ const increaseTextKey = key==='+' || key==='=' || code==='NumpadAdd' || kc===107;
+ const decreaseTextKey = key==='-' || key==='_' || code==='NumpadSubtract' || kc===109;
+ const resetTextKey = (key==='0' || code==='Numpad0') && !e.ctrlKey && !e.metaKey && !e.altKey;
+ if(increaseTextKey){e.preventDefault();changeGlobalTextSize(5);}
+ else if(decreaseTextKey){e.preventDefault();changeGlobalTextSize(-5);}
+ else if(resetTextKey){e.preventDefault();resetGlobalTextSize();}
+ else if(forwardKeys){e.preventDefault();next();showRemoteHint('Next slide');}
  else if(backKeys){e.preventDefault();prev();showRemoteHint('Previous slide');}
  else if(key==='Home'||kc===36){e.preventDefault();show(0);showRemoteHint('First slide');}
  else if(key==='End'||kc===35){e.preventDefault();show(slides.length-1);showRemoteHint('Last slide');}
